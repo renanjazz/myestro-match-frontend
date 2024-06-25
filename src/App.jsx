@@ -9,8 +9,10 @@ import SchedulePage from "./pages/SchedulePage";
 import StudioCard from "./components/StudioCard";
 import TeacherCard from "./components/TeacherCard";
 // Pages
+import AboutPage from "./pages/AboutPage";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import SchedulePage from "./pages/SchedulePage";
 import StudiosPage from "./pages/StudiosPage";
 import TeacherPage from "./pages/TeacherPage";
@@ -20,10 +22,11 @@ function App() {
   return (
     <>
       <div>
+        <Navbar/>
         <Routes>
 
         </Routes>
-        <h1>Hello Maestro Match</h1>
+        <Footer/>
       </div>
     </>
   );
