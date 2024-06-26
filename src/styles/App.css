@@ -1,0 +1,62 @@
+:root {
+    background-color: #EE8C45;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    margin-top: 0px;
+    flex-direction: column;
+    background-color: #101010;
+    padding-top: 36px;
+    padding-bottom: 10px;
+    width: 100vw;
+}
+
+.closed-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.opened-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.nav-link {
+    background-color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    color: #F0F0F0;
+    font-size: 16px;
+    padding: 0px
+}
+
+.user-icon {
+    height: 35px;
+    padding-left: 10px
+}
+
+.nav-logo {
+    height: 35px
+}
+
+.close-icon {
+    width: 25px;
+    padding-right: 10px
+
+}
+
+.hamburger-icon {
+    width: 25px;
+    padding-right: 10px
+
+}
