@@ -1,11 +1,43 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import axios from "axios";
+import { API_URL } from "../../config";
+import { useState } from "react";
+import ScheduleCard from "../components/ScheduleCard";
 
 const SchedulePage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [schedule, setSchedule] = useState([]);
 
-export default SchedulePage
+  useEffect(() => {
+    const fetchSchedule = async () => {
+      try {
+        const { data } = await axios.get(
+          `${API_URL}/schedule/api/class-schedule`
+        );
+        console.log("These is the schedule", data);
+        setSchedule(data);
+        console.log(schedule);
+      } catch (error) {
+        console.log("Error fetching the schedule", error);
+      }
+    };
+    fetchSchedule();
+  }, []);
+
+  return (
+    <>
+      <div>
+        <h2>Class Schedule</h2>
+        <h4>
+          Upcoming {schedule.length}
+          {schedule.map((schedule) => (
+            <ScheduleCard key={schedule._id} schedule={schedule} />
+          ))}
+        </h4>
+        <h2>Past</h2>
+        <button>See Favourites</button>
+      </div>
+    </>
+  );
+};
+
+export default SchedulePage;
