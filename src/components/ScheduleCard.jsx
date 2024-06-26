@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const ScheduleCard = () => {
+const ScheduleCard = ({ schedule }) => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <div className="schedule-card">
+        <button>Cancel booking</button>
+        <button>Update time</button>
+      </div>
+    </>
+  );
+};
 
-export default ScheduleCard
+export default ScheduleCard;
