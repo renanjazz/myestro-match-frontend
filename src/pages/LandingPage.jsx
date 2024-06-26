@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [teacher, setTeacher] = useState("");
+  const [studio, setStudio] = useState("");
+  const navigate = useNavigate();
 
-export default LandingPage
+  return <div className="landing-page">
+    <h1>Myestro</h1>
+    <h4 className="landingpage-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus, libero eu aliquel tincidunt, ex ligula ullamcorper urna, id commodo ligula odio et arcu.
+    </h4>
+  </div>;
+};
+
+export default LandingPage;
