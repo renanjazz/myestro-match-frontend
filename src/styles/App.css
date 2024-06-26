@@ -18,7 +18,7 @@
 
 
 
-
+/*Footer related css*/
 .footer{
     margin:0;
     height: 12vh;
@@ -32,11 +32,18 @@
 .footer-about-contact{
     width:50%;
     text-align: left;   
+    align-content: center;
+    line-height: 14px;
 }
+
 .footer-about-contact a{
     color: #F0F0F0;    
 }
 
+.footer-about-contact a:active,
+.footer-about-contact a:hover{
+    color: #EE8C45;    
+}
 .footer-drj-product{
     width:50%;
     height: 100%;
