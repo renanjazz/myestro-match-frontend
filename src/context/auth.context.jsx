@@ -1,12 +1,16 @@
 import { createContext, useState, useEffect } from 'react';
 import { API_URL } from '../config.js';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 const AuthContextWrapper = ({ children }) => {
 	const [currUser, setCurrUser] = useState(null);
 	const [loadActive, setLoadActive] = useState(true);
 	const [userLogged, setUserLogged] = useState(false);
+
+	const nav = useNavigate();
+
 
 	function storeToken(token) {
 		//I added it here so we can use it from both the sign up and the login
@@ -51,6 +55,8 @@ const AuthContextWrapper = ({ children }) => {
 		nav("/")
 		console.log("User logged out successfully");
 	};
+
+	
 
 	return (
 		<AuthContext.Provider
