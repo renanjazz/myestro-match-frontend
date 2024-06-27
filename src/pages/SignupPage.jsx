@@ -135,6 +135,8 @@ const SignUpPage = () => {
 				{error && <p className="error-message">{error}</p>}
 				<button type="submit">Sign Up!</button>
 			</form>
+      <br />
+      <h3>Already have an account? <a href="/login">Login!</a></h3>
 		</div>
 	);
 };

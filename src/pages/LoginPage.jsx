@@ -53,6 +53,8 @@ const LoginPage = () => {
         <button type="submit">Login!</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      <br />
+      <h3>Not a member yet? <a href="/signup">Sign up now!</a></h3>
     </div>
   );
 };
