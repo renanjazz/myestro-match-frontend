@@ -17,10 +17,14 @@ import SignUpPage from "./pages/SignupPage";
 import SchedulePage from "./pages/SchedulePage";
 import StudiosBookingPage from "./pages/StudiosBookingPage";
 import StudiosPage from "./pages/StudiosPage";
+import StudiosDetailsPage from "./pages/StudiosDetailsPage";
 import TeacherPage from "./pages/TeacherPage";
+import TeacherDetailsPage from "./pages/TeacherDetailsPage";
 import UserProfilePage from "./pages/UserProfilePage";
 
 function App() {
+
+  
   return (
     <>
       <div>
@@ -34,7 +38,9 @@ function App() {
           <Route path="/schedule" element={<SchedulePage/>}/>
           <Route path="/studios" element={<StudiosPage/>}/>
           <Route path="/studios-booking" element={<StudiosBookingPage/>}/>
+          <Route path="/studios-details" element={<StudiosDetailsPage/>}/>
           <Route path="/teacher" element={<TeacherPage/>}/>
+          <Route path="/teacher-details" element={<TeacherDetailsPage/>  }/>
           <Route path="/profile" element={<UserProfilePage/>}/>
         </Routes>
         <Footer/>
