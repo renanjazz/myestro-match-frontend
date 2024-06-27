@@ -23,7 +23,6 @@ import TeacherDetailsPage from "./pages/TeacherDetailsPage";
 import UserProfilePage from "./pages/UserProfilePage";
 
 function App() {
-
   
   return (
     <>
@@ -38,9 +37,9 @@ function App() {
           <Route path="/schedule" element={<SchedulePage/>}/>
           <Route path="/studios" element={<StudiosPage/>}/>
           <Route path="/studios-booking" element={<StudiosBookingPage/>}/>
-          <Route path="/studios-details" element={<StudiosDetailsPage/>}/>
+          <Route path="/studios/:studioId" element={<StudiosDetailsPage/>}/>
           <Route path="/teacher" element={<TeacherPage/>}/>
-          <Route path="/teacher-details" element={<TeacherDetailsPage/>  }/>
+          <Route path="/teacher/:teacherId" element={<TeacherDetailsPage/>}/>
           <Route path="/profile" element={<UserProfilePage/>}/>
         </Routes>
         <Footer/>

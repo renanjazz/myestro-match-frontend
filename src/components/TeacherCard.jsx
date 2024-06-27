@@ -12,7 +12,7 @@ const TeacherCard = ({ teacher }) => {
         </h5>
         <h5>Presence: {teacher.attendance_type}</h5>
         <h5>Rating: {teacher.rating}</h5>
-        <Link to="/teacher-details">
+        <Link to={`/teacher/${teacher._id}`}>
         <button>Know more</button>
         </Link>
       </div>

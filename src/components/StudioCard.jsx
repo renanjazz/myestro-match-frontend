@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import rivendell from "../assets/rivendell.jpeg";
+import { Link } from "react-router-dom";
 
 const StudioCard = ({ studio }) => {
   return (
@@ -12,8 +12,9 @@ const StudioCard = ({ studio }) => {
         </h5>
         <p>Description: {studio.description}</p>
         <h5>Rating: {studio.rating}</h5>
-        {/* <img src={rivendell} alt="rivendell-img" /> */}
-        <button>Book</button>
+        <Link to={`/studios/${studio._id}`}>
+        <button>Know more</button>
+        </Link>
       </div>
     </>
   );

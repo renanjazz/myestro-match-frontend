@@ -31,7 +31,6 @@ if(currUser){
           <button>Find me a Studio</button>
         </Link>
       </div>
-      ;
     </>
   );
 };
