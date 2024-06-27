@@ -44,6 +44,7 @@ const AuthContextWrapper = ({ children }) => {
 		authUser();
 	}, []);
 
+	
 	return (
 		<AuthContext.Provider
 			value={{ currUser, loadActive, userLogged, storeToken, authUser }}

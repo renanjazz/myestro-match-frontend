@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AuthContext } from '../context/auth.context.jsx';
 
 const LandingPage = () => {
   const [teacher, setTeacher] = useState("");
   const [studio, setStudio] = useState("");
+  const { currUser } = useContext(AuthContext);
   const navigate = useNavigate();
+if(currUser){
+  console.log(currUser)
+}else{
+  console.log("No user info")
+}
+
 
   return (
     <>
