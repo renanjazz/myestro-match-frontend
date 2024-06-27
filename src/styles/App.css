@@ -1,101 +1,102 @@
 /*Footer related css*/
-.footer{
-    margin:0;
-    height: 12vh;
-    width: 100vw;
-    background-color: #101010;
-    display: flex;
-    justify-content: space-around;
-    font-size: 10px;
-
+.footer {
+	margin: 0;
+	height: 12vh;
+	width: 100vw;
+	background-color: #101010;
+	display: flex;
+	justify-content: space-around;
+	font-size: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
 }
 
-.footer-about-contact{
-    width:50%;
-    text-align: left;   
-    align-content: center;
-    line-height: 14px;
-    padding: 0px 4vw;
+.footer-about-contact {
+	width: 50%;
+	text-align: left;
+	align-content: center;
+	line-height: 14px;
+	padding: 0px 4vw;
 }
 
-.footer-about-contact a{
-    color: #F0F0F0;    
+.footer-about-contact a {
+	color: #f0f0f0;
 }
 
 .footer-about-contact a:active,
-.footer-about-contact a:hover{
-    color: #EE8C45;    
+.footer-about-contact a:hover {
+	color: #ee8c45;
 }
-.footer-drj-product{
-    width:50%;
-    height: 100%;
-    color: #F0F0F0;
-    text-align: right;  
-    padding-right: 10px;
-    padding: 0px 5vw;
-
+.footer-drj-product {
+	width: 50%;
+	height: 100%;
+	color: #f0f0f0;
+	text-align: right;
+	padding-right: 10px;
+	padding: 0px 5vw;
 }
 :root {
-    height: 100vh;
+	background-color: #ee8c45;
+	height: 100vh;
 }
 body {
     background: rgb(255,110,80);
     background: radial-gradient(circle, rgba(255,110,80,1) 0%, rgba(237,124,124,1) 45%, rgba(252,176,69,1) 100%);
 }
 .navbar {
-    display: flex;
-    margin-top: 0px;
-    flex-direction: column;
-    background-color: #101010;
-    padding-top: 36px;
-    padding-bottom: 10px;
-    width: 100vw;
+	display: flex;
+	margin-top: 0px;
+	flex-direction: column;
+	background-color: #101010;
+	padding-top: 36px;
+	padding-bottom: 10px;
+	width: 100vw;
 }
 
 .closed-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .opened-nav {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .nav-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px;
 }
 
 .nav-link {
-    background-color: #101010;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    color: #F0F0F0;
-    font-size: 16px;
-    padding: 0px
+	background-color: #101010;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #f0f0f0;
+	font-size: 16px;
+	padding: 0px;
 }
 
 .user-icon {
-    height: 35px;
-    padding-left: 10px
+	height: 35px;
+	padding-left: 10px;
 }
 
 .nav-logo {
-    height: 35px
+	height: 35px;
 }
 
 .close-icon {
-    width: 25px;
-    padding-right: 10px
-
+	width: 25px;
+	padding-right: 10px;
 }
 
 .hamburger-icon {
-    width: 25px;
-    padding-right: 10px
-
+	width: 25px;
+	padding-right: 10px;
 }
