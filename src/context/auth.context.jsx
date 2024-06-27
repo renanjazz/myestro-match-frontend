@@ -44,9 +44,17 @@ const AuthContextWrapper = ({ children }) => {
 		authUser();
 	}, []);
 
+	// added for navbar logout
+	const handleLogout = () => {
+		localStorage.removeItem("authToken")
+		setCurrUser(null)
+		nav("/")
+		console.log("User logged out successfully");
+	};
+
 	return (
 		<AuthContext.Provider
-			value={{ currUser, loadActive, userLogged, storeToken, authUser }}
+			value={{ currUser, loadActive, userLogged, storeToken, authUser, handleLogout }}
 		>
 			{children}
 		</AuthContext.Provider>
