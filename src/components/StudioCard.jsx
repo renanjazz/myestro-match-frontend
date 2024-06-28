@@ -13,7 +13,7 @@ const StudioCard = ({ studio }) => {
         <p>Description: {studio.description}</p>
         <h5>Rating: {studio.rating}</h5>
         <Link to={`/studios/${studio._id}`}>
-        <button>Know more</button>
+          <button>Know more</button>
         </Link>
       </div>
     </>

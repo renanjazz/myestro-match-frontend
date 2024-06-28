@@ -26,14 +26,14 @@ const SchedulePage = () => {
   return (
     <>
       <div>
-        <h2>Class Schedule</h2>
+        <h2>My Bookings</h2>
         <h4>
           Upcoming {schedule.length}
           {schedule.map((schedule) => (
             <ScheduleCard key={schedule._id} schedule={schedule} />
           ))}
         </h4>
-        <h2>Past</h2>
+        <h2>Past Bookings</h2>
         <button>See Favourites</button>
       </div>
     </>
