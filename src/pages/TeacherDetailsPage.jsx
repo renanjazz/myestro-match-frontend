@@ -1,55 +1,133 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { API_URL } from "../../config";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { API_URL } from '../../config';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
 
 const TeacherDetailsPage = () => {
-  const { teacherId } = useParams();
-  const [teacherDetails, setTeacherDetails] = useState([]);
-  console.log(teacherId);
-  useEffect(() => {
-    const fetchTeacher = async () => {
-      try {
-        const { data } = await axios.get(
-          `${API_URL}/teachers/api/teachers/${teacherId}`
-        );
-        console.log("These is the teacher data", data);
-        setTeacherDetails(data);
-        console.log(teacherDetails);
-      } catch (error) {
-        console.log("Error fetching the teacher", error);
-      }
-    };
-    fetchTeacher();
-  }, [teacherId]);
+	const { teacherId } = useParams();
+	const [teacherDetails, setTeacherDetails] = useState([]);
+	const [availability, setAvailability] = useState([]);
+  const [choosenDay, setChoosenDay] = useState(null)
+  const [errora, setErrora] = useState(null);
+  const {currUser} = useContext(AuthContext)
+	console.log(teacherId);
+	useEffect(() => {
+    setErrora(null)
+		const fetchTeacher = async () => {
+			try {
+				const { data } = await axios.get(
+					`${API_URL}/teachers/api/teachers/${teacherId}`
+				);
+				console.log('This is the teacher data', data);
+				setTeacherDetails(data);
+        setAvailability(data.availability)
+				console.log(teacherDetails);
+			} catch (error) {
+				console.log('Error fetching the teacher', error);
+			}
+		};
+   		fetchTeacher();
+       
+	}, [teacherId]);
 
-  return (
-    <>
-      <div className="teacher-details">
-        <form>
-          <h2>{teacherDetails.fullname}</h2>
-          <img src={teacherDetails.picture} alt={teacherDetails.fullname} />
-          
-          <h4>
-            Instrument:
-            {teacherDetails.instrument}
-          </h4>
-          <h5>Description: {teacherDetails.description}</h5>
-          <h5>Presence: {teacherDetails.attendance_type}</h5>
-          <h5>Rating: {teacherDetails.rating}</h5>
-          <h5>Email: {teacherDetails.email} </h5>
-          <h4>Price per session: {teacherDetails.price_per_session}</h4>
+	if (!teacherDetails) {
+		return <div>Loading...</div>;
+	}
 
+	async function handleBooking() {
+    if (!currUser) {
+      setErrora('You need to log in to book a session');
+      return;
+    }
 
-        </form>
-        <Link to="/schedule">
-          <button>Book</button>
-          </Link>
+    if (!choosenDay) {
+      setErrora('Please choose a time date to book');
+      return;
+    }
+
+    try {
+      const { start_time, day_of_week } = choosenDay;
+      await axios.post(`${API_URL}/schedule/api/class-schedule`, {
+        user: currUser.id,
+        teacher: teacherId,
+        start_time,
+        day_of_week,
+      });
+      alert('Booking confirmed!');
+      
+    } catch (error) {
+      setErrora('Error booking the date. Please try again.');
+      console.log(error)
+    }
+    
+  }
+
+	return (
+		<>
+			<div className="teacher-details">
+				<h2>{teacherDetails.fullname}</h2>
+				<img
+					src={teacherDetails.picture}
+					alt={teacherDetails.fullname}
+					style={{ height: '200px' }}
+				/>
+				<h3>{teacherDetails.rating}</h3>
+				<h3>About me:</h3>
+				<p>{teacherDetails.description}</p>
+				<p>
+					<strong>Email:</strong>
+				</p>
+				<p>{teacherDetails.email}</p>
+				<p>
+					<strong>Instrument:</strong>
+				</p>
+				<p>{teacherDetails.instrument}</p>
+				<p>
+					<strong>Price/hour</strong>
+				</p>
+				<p>{teacherDetails.price_per_session}€</p>
+				<p>
+					<strong>Attendance type</strong>
+				</p>
+				<p>{teacherDetails.attendance_type}</p>
+				<h3>Available dates:</h3>
+				<div>
+        {availability.length > 0 ? (
+          availability.filter(date=>!date.reserved).map((date) => (
+            <div key={date._id}>
+              <button onClick={() => setChoosenDay(date)}>
+                {date.day_of_week} - {date.start_time}
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No available dates</p>
+        )}
       </div>
-    </>
-  );
+      {choosenDay && (
+        <div>
+          <h4>Chosen date:</h4>
+          <p>{choosenDay.day_of_week} - {choosenDay.start_time}</p>
+        </div>
+      )}
+
+{errora && <p className="error-message">{errora}</p>}
+      <button onClick={handleBooking}>Book session</button>
+
+
+        <br />
+        <br />
+			</div>
+      <img
+					src={teacherDetails.picture}
+					alt={teacherDetails.fullname}
+					style={{ height: '200px' }}
+				/>
+		</>
+	);
 };
 
 export default TeacherDetailsPage;
