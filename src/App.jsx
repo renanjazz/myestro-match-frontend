@@ -2,8 +2,6 @@
 import { useState } from "react";
 import "./styles/App.css";
 import { Routes, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 // Components
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
