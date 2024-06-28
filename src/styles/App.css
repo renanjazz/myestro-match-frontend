@@ -1,12 +1,10 @@
 /*Footer related css*/
 .footer {
 	margin: 0;
-	height: 12vh;
 	width: 100vw;
 	background-color: #101010;
 	display: flex;
 	justify-content: space-around;
-	font-size: 10px;
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -16,35 +14,50 @@
 .footer-about-contact {
 	width: 50%;
 	text-align: left;
-	align-content: center;
-	line-height: 14px;
-	padding: 0px 4vw;
+	line-height: 30px;
+    padding: 10px;
 }
 
 .footer-about-contact a {
-	color: #f0f0f0;
+	color: #F0F0F0;
+    text-decoration: none;
 }
 
 .footer-about-contact a:active,
 .footer-about-contact a:hover {
-	color: #ee8c45;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    text-decoration: underline;
+
 }
 .footer-drj-product {
-	width: 50%;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-size: 0.6rem;
+    width: 50%;
 	height: 100%;
-	color: #f0f0f0;
+	color: #b9b9b9;
 	text-align: right;
-	padding-right: 10px;
-	padding: 0px 5vw;
+    padding-right: 10px;
+    margin-top: 30px
 }
+
+.footer-text {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+    font-size: 0.85rem;
+    font-weight: lighter;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
 :root {
-	background-color: #ee8c45;
+	background-color: #101010;
 	height: 100vh;
 }
 body {
-    background: rgb(255,110,80);
-    background: radial-gradient(circle, rgba(255,110,80,1) 0%, rgba(237,124,124,1) 45%, rgba(252,176,69,1) 100%);
+    background: rgb(250,217,132);
+    background: linear-gradient(140deg, rgba(250,217,132,1) 0%, rgba(238,140,69,1) 100%);
 }
+
 .navbar {
 	display: flex;
 	margin-top: 0px;
@@ -74,29 +87,116 @@ body {
 	padding: 5px 10px;
 }
 
+.nav-row-3 {
+	display: flex;
+	justify-content: flex-end;
+	padding: 5px 10px;
+}
+
 .nav-link {
 	background-color: #101010;
 	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #f0f0f0;
-	font-size: 16px;
+	font-size: 0.85rem;
+    font-weight: lighter;
 	padding: 0px;
+    cursor: pointer;
 }
 
+.nav-link:hover {
+	background-color: #101010;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #f0f0f0;
+	font-size: 0.85rem;
+    font-weight: lighter;
+	padding: 0px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
 .user-icon {
-	height: 35px;
+	height: 23px;
 	padding-left: 10px;
 }
 
 .nav-logo {
-	height: 35px;
+	height: 25px;
+    padding-top: 5px;
 }
 
 .close-icon {
-	width: 25px;
+	width: 20px;
 	padding-right: 10px;
 }
 
 .hamburger-icon {
-	width: 25px;
+	width: 20px;
 	padding-right: 10px;
+}
+
+button {
+    color: black;
+    background: white;
+}
+
+.landing-page{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.landingpage-text {
+    color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: lighter;
+    font-size: 0.9rem;
+    width: 90vw;
+}
+
+.landingpage-logo {
+    width: 180px;
+    max-width: 2000px;
+    margin-top: 45px;
+}
+
+.landing-page-button{
+    color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #F0F0F0;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+}
+
+.landing-page-button:hover{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 1rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.landing-page-button.selected{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 1rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
 }

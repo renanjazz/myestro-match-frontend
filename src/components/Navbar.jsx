@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="closed-nav">
-        <Link to="UserProfilePage">
+        <Link to="profile">
           <img src={usericon} alt="user-icon" className="user-icon" />
         </Link>
         <Link to="/">
@@ -44,22 +44,22 @@ const Navbar = () => {
       {showMenu && (
         <div className="opened-nav">
           <div className="nav-row">
-            <Link to="/TeacherPage">
+            <Link to="/teachers">
               <button className="nav-link">Find a teacher</button>
             </Link>
-            <Link to="/SchedulePage">
+            <Link to="/schedule">
               <button className="nav-link">Class schedule</button>
             </Link>
           </div>
           <div className="nav-row">
-            <Link to="/StudiosPage">
+            <Link to="/studio">
               <button className="nav-link">Find a studio</button>
             </Link>
-          </div>
-          <div className="nav-row">
             <Link to="/profile">
               <button className="nav-link">My profile</button>
             </Link>
+          </div>
+          <div className="nav-row-3">
             {currUser ? (
               <button onClick={handleLogout} className="nav-link">
                 Logout

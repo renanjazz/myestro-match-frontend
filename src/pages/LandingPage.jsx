@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../context/auth.context.jsx';
+import logoblack from "../assets/myestro-b.png";
 
 const LandingPage = () => {
   const [teacher, setTeacher] = useState("");
@@ -18,17 +19,15 @@ if(currUser){
   return (
     <>
       <div className="landing-page">
-        <h1>Myestro</h1>
+      <img src={logoblack} alt="logo" className="landingpage-logo" />
         <h4 className="landingpage-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus,
-          libero eu aliquel tincidunt, ex ligula ullamcorper urna, id commodo
-          ligula odio et arcu.
+          Find the perfect music teacher or studio for your needs! Simply follow the links below to begin exploring from the finest selection in Middle-earth.
         </h4>
         <Link to="/teacher">
-          <button>Find me a Teacher</button>
+          <button className="landing-page-button">Find me a Teacher</button>
         </Link>
         <Link to="/studios">
-          <button>Find me a Studio</button>
+          <button className="landing-page-button">Find me a Studio</button>
         </Link>
       </div>
     </>
