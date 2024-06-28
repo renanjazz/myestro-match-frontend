@@ -11,3 +11,5 @@ const IsPrivate = ({ children }) => {
   return <div>{children}</div>;
 };
 export default IsPrivate;
+
+// TO-DO - message saying for user to log in
