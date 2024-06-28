@@ -5,13 +5,15 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className='footer-about-contact'>
-        <NavLink to="/about"><h2>About us</h2></NavLink>
-        <NavLink to="/contacts"><h2>Contact us</h2></NavLink>
+        <div>
+        <NavLink to="/about" className="footer-text">About us</NavLink>
+        </div>
+        <div>
+        <NavLink to="/contacts" className="footer-text">Contact us</NavLink>
+        </div>
       </div>
       <div className='footer-drj-product'>
-        <br />
-        <br />
-        <p><em>A product of <br />
+       <p><em>A product of <br />
         DRJ Industries</em></p>
       </div>
     </div>
