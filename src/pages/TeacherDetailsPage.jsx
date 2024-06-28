@@ -30,7 +30,8 @@ const TeacherDetailsPage = () => {
       <div className="teacher-details">
         <form>
           <h2>{teacherDetails.fullname}</h2>
-          {teacherDetails.picture}
+          <img src={teacherDetails.picture} alt={teacherDetails.fullname} />
+          
           <h4>
             Instrument:
             {teacherDetails.instrument}
@@ -39,8 +40,9 @@ const TeacherDetailsPage = () => {
           <h5>Presence: {teacherDetails.attendance_type}</h5>
           <h5>Rating: {teacherDetails.rating}</h5>
           <h5>Email: {teacherDetails.email} </h5>
-          <h5>Availability: {teacherDetails.availability}</h5>
           <h4>Price per session: {teacherDetails.price_per_session}</h4>
+
+
         </form>
         <Link to="/schedule">
           <button>Book</button>
