@@ -16,7 +16,6 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignupPage";
 import SchedulePage from "./pages/SchedulePage";
-import StudiosBookingPage from "./pages/StudiosBookingPage";
 import StudiosPage from "./pages/StudiosPage";
 import StudiosDetailsPage from "./pages/StudiosDetailsPage";
 import TeacherPage from "./pages/TeacherPage";
@@ -34,9 +33,16 @@ function App() {
           <Route path="/contacts" element={<ContactsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/schedule" element={<SchedulePage />} />
+          <Route
+            path="/schedule"
+            element={
+              <IsPrivate>
+                {" "}
+                <SchedulePage />{" "}
+              </IsPrivate>
+            }
+          />
           <Route path="/studios" element={<StudiosPage />} />
-          <Route path="/studios-booking" element={<StudiosBookingPage />} />
           <Route path="/studios/:studioId" element={<StudiosDetailsPage />} />
           <Route path="/teacher" element={<TeacherPage />} />
           <Route path="/teacher/:teacherId" element={<TeacherDetailsPage />} />
