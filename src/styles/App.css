@@ -1,13 +1,14 @@
 /*Footer related css*/
 .footer {
 	margin: 0;
+    margin-top: auto;
 	height: 12vh;
 	width: 100vw;
 	background-color: #101010;
 	display: flex;
 	justify-content: space-around;
 	font-size: 10px;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	bottom: 0;
 	right: 0;

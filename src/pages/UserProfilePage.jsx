@@ -11,7 +11,7 @@ const UserProfilePage = () => {
     if (currUser) {
       async function getUserInfo() {    
         try {
-          const { data } = await axios.get(`${API_URL}/auth/profile/${currUser.userId}`);
+          const { data } = await axios.get(`${API_URL}/auth/profile/${currUser._id}`);
           setProfileUser(data);
         } catch (error) {
           console.error('No user found:', error);
