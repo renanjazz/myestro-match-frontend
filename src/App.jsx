@@ -2,9 +2,12 @@
 import { useState } from "react";
 import "./styles/App.css";
 import { Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 // Components
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import IsPrivate from "./components/IsPrivate";
 import ScheduleCard from "./components/ScheduleCard";
 import StudioCard from "./components/StudioCard";
 import TeacherCard from "./components/TeacherCard";
@@ -23,26 +26,33 @@ import TeacherDetailsPage from "./pages/TeacherDetailsPage";
 import UserProfilePage from "./pages/UserProfilePage";
 
 function App() {
-  
   return (
     <>
       <div>
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<LandingPage/>}/>
-          <Route path="/about" element={<AboutPage/>}/>
-          <Route path="/contacts" element={<ContactsPage/>}/>
-          <Route path="/login" element={<LoginPage/>}/>
-          <Route path="/signup" element={<SignUpPage/>}/>
-          <Route path="/schedule" element={<SchedulePage/>}/>
-          <Route path="/studios" element={<StudiosPage/>}/>
-          <Route path="/studios-booking" element={<StudiosBookingPage/>}/>
-          <Route path="/studios/:studioId" element={<StudiosDetailsPage/>}/>
-          <Route path="/teacher" element={<TeacherPage/>}/>
-          <Route path="/teacher/:teacherId" element={<TeacherDetailsPage/>}/>
-          <Route path="/profile" element={<UserProfilePage/>}/>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/studios" element={<StudiosPage />} />
+          <Route path="/studios-booking" element={<StudiosBookingPage />} />
+          <Route path="/studios/:studioId" element={<StudiosDetailsPage />} />
+          <Route path="/teacher" element={<TeacherPage />} />
+          <Route path="/teacher/:teacherId" element={<TeacherDetailsPage />} />
+          <Route
+            path="/profile"
+            element={
+              <IsPrivate>
+                {" "}
+                <UserProfilePage />{" "}
+              </IsPrivate>
+            }
+          />
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
