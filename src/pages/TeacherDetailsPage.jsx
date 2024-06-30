@@ -62,7 +62,7 @@ const TeacherDetailsPage = () => {
           slot._id === _id ? { ...slot, reserved: true } : slot
         )
       );
-      
+      setChoosenDay(null)
 			alert('Booking confirmed!');
 		} catch (error) {
 			setErrora('Error booking the date. Please try again.');

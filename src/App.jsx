@@ -25,7 +25,7 @@ import UserProfilePage from "./pages/UserProfilePage";
 function App() {
   return (
     <>
-      <div>
+      <div className="body-of-app">
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
