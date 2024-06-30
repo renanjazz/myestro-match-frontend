@@ -2,27 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from '../context/auth.context.jsx';
 import axios from "axios";
 import { API_URL } from "../config.js";
+import { useNavigate } from "react-router-dom";
 
-const UserProfilePage = () => {
-  const [profileUser, setProfileUser] = useState(null);
-  const { currUser } = useContext(AuthContext);
+const UserProfilePage = ({profileUser}) => {
+  const nav = useNavigate();
 
-  useEffect(() => {
-    if (currUser) {
-      async function getUserInfo() {    
-        try {
-          const { data } = await axios.get(`${API_URL}/auth/profile/${currUser._id}`);
-          setProfileUser(data);
-        } catch (error) {
-          console.error('No user found:', error);
-        }
-      }
-      getUserInfo();
-    }
-  }, [currUser]);
+  function editProfile(){
+    nav("/edit-user-profile")
 
-  console.log("this is user", currUser);
-
+  }
 
   return (
     <div>
@@ -37,6 +25,10 @@ const UserProfilePage = () => {
       <h4>Played instrument: {profileUser?.instrument}</h4>
       <h4>Member since: {profileUser?.member_since}</h4>
       <h4>Phone: {profileUser?.phone_number}</h4>
+
+
+      <br />
+      <button onClick={editProfile}>Edit Profile</button>
 
     </div>
   );

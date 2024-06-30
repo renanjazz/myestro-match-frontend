@@ -11,6 +11,11 @@ html {
 	color: red;
 	font-weight: bold;
 }
+
+.p-indent {
+	text-indent: 40px;
+}
+
 .body-of-app {
 	margin: 0;
 	display: flex;
@@ -219,6 +224,7 @@ button {
 	cursor: pointer;
 }
 
+/*Fake modal, made with html and css(it's just a box with options)*/
 .modal-overlay {
 	position: fixed;
 	top: 0;
