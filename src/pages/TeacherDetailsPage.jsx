@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../config';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 
 const TeacherDetailsPage = () => {
@@ -13,7 +12,10 @@ const TeacherDetailsPage = () => {
 	const [choosenDay, setChoosenDay] = useState(null);
 	const [errora, setErrora] = useState(null);
 	const { currUser } = useContext(AuthContext);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	console.log(teacherId);
+
 	useEffect(() => {
 		setErrora(null);
 		const fetchTeacher = async () => {
@@ -37,16 +39,6 @@ const TeacherDetailsPage = () => {
 	}
 
 	async function handleBooking() {
-		if (!currUser) {
-			setErrora('You need to log in to book a session');
-			return;
-		}
-
-		if (!choosenDay) {
-			setErrora('Please choose a time date to book');
-			return;
-		}
-
 		try {
 			const { start_time, day_of_week, _id } = choosenDay;
 			await axios.post(`${API_URL}/schedule/api/class-schedule`, {
@@ -57,18 +49,39 @@ const TeacherDetailsPage = () => {
 				availability: _id,
 			});
 
-      setAvailability(prevAvailability =>
-        prevAvailability.map(slot =>
-          slot._id === _id ? { ...slot, reserved: true } : slot
-        )
-      );
-      setChoosenDay(null)
+			setAvailability((prevAvailability) =>
+				prevAvailability.map((slot) =>
+					slot._id === _id ? { ...slot, reserved: true } : slot
+				)
+			);
+			setChoosenDay(null);
+			setIsModalOpen(false);
 			alert('Booking confirmed!');
 		} catch (error) {
 			setErrora('Error booking the date. Please try again.');
+			alert('Error booking the date. Please try again.');
 			console.log(error);
 		}
 	}
+
+	const openModal = () => {
+		if (!currUser) {
+			setErrora('You need to log in to book a session');
+			alert('You need to log in to book a session');
+			return;
+		}
+
+		if (choosenDay) {
+			setIsModalOpen(true);
+		} else {
+			setErrora('Please choose a time date to book');
+			setIsModalOpen(false);
+		}
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
 
 	return (
 		<>
@@ -120,20 +133,35 @@ const TeacherDetailsPage = () => {
 						<p>
 							{choosenDay.day_of_week} - {choosenDay.start_time}
 						</p>
+						{isModalOpen && (
+							<div className="modal-overlay">
+								<div className="modal">
+									<h2>Confirm Booking</h2>
+									{choosenDay && (
+										<>
+											<p>
+												Do you want to book a session on{' '}
+												{choosenDay.day_of_week} at {choosenDay.start_time} for{' '}
+												{teacherDetails.price_per_session}€/session?
+											</p>
+											<button onClick={handleBooking}>Confirm</button>
+											<button onClick={closeModal}>Cancel</button>
+										</>
+									)}
+								</div>
+							</div>
+						)}
 					</div>
 				)}
-
-				{errora && <p className="error-message">{errora}</p>}
-				<button onClick={handleBooking}>Book session</button>
+				<br />
 
 				<br />
+				<button onClick={openModal}>Book session</button>
+				<br />
+				<div>{errora && <p className="error-message">{errora}</p>}</div>
+
 				<br />
 			</div>
-			<img
-				src={teacherDetails.picture}
-				alt={teacherDetails.fullname}
-				style={{ height: '200px' }}
-			/>
 		</>
 	);
 };
