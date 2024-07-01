@@ -52,7 +52,7 @@ function App() {
 	return (
 		<>
 			<div className="body-of-app">
-				<Navbar />
+				<Navbar profileUser={profileUser}/>
 				<Routes>
 					<Route
 						path="/"
