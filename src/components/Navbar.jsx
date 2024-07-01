@@ -6,7 +6,7 @@ import close from "../assets/close-icon.png";
 import usericon from "../assets/user-profile-icon.png";
 import { AuthContext } from "../context/auth.context";
 
-const Navbar = () => {
+const Navbar = ({profileUser}) => {
   const [showMenu, setShowMenu] = useState(false);
   const { handleLogout, currUser } = useContext(AuthContext);
   //above taken from 'fridge'
@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="closed-nav">
         <Link to="profile">
-          <img src={usericon} alt="user-icon" className="user-icon" />
+          <img src={profileUser?.userImage || usericon} alt="user-icon" className="user-icon" />
         </Link>
         <Link to="/">
           <img src={logowhite} alt="logo" className="nav-logo" />

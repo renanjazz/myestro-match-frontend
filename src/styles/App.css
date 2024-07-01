@@ -144,6 +144,7 @@ body {
 .user-icon {
 	height: 23px;
 	padding-left: 10px;
+	border-radius: 50%;
 }
 
 .nav-logo {

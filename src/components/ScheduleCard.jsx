@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React from 'react';
+import { API_URL } from '../config';
 
-const ScheduleCard = ({ schedule }) => {
+const ScheduleCard = ({ schedule, handleDelete }) => {
 	const formatTime = (time) => {
 		const timeStr = time.toString(); 
 		if (timeStr.length === 4) {
@@ -11,9 +13,31 @@ const ScheduleCard = ({ schedule }) => {
 		return timeStr; 
 	};
 
-  async function handleDeleteSchedule(){
-    
-  }
+  const handleDeleteSchedule = async () => {
+    try {
+      await axios.delete(`${API_URL}/schedule/api/class-schedule/${schedule._id}`);
+      handleDelete(schedule._id);
+    } catch (error) {
+      console.error('Error deleting schedule:', error);
+    }
+  };
+
+  const handleUpdateSchedule = async () => {
+    try {
+      
+      } catch (error) {
+      
+    }
+  };
+
+  const handleCompleteSchedule = async () => {
+    try {
+      await axios.put(`${API_URL}/schedule/api/class-schedule/${schedule._id}`, { status: "Completed" });
+      handleDelete(schedule._id);
+    } catch (error) {
+      console.error('Error completing schedule:', error);
+    }
+  };
 
 	return (
 		<div className="teachers-page">
@@ -30,8 +54,9 @@ const ScheduleCard = ({ schedule }) => {
 					<p>{schedule.status}</p>
 					<br />
 					<div>
-						<button>Cancel booking</button>
-						<button>Update time</button>
+						<button onClick={handleDeleteSchedule}>Cancel class</button>
+						<button onClick={handleUpdateSchedule}>Change time</button>
+            <button onClick={handleCompleteSchedule}>Mark as complete</button>
 					</div>
 				</div>
 			)}
