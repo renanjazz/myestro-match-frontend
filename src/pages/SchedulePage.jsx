@@ -27,7 +27,6 @@ const SchedulePage = ({ formatTime }) => {
 
 				const completed = data.filter((item) => item.status === 'Completed');
 				setScheduledBookings(scheduled);
-
 				setCompletedBookings(completed);
 			} catch (error) {
 				console.log('Error fetching the schedule', error);
@@ -38,13 +37,15 @@ const SchedulePage = ({ formatTime }) => {
 	}, [currUser]);
 
 	const handleDelete = (id) => {
-		setScheduledBookings(
-			scheduledBookings.filter((schedule) => schedule._id !== id)
-		);
-		setCompletedBookings(
-			completedBookings.filter((schedule) => schedule._id !== id)
-		);
-	};
+		setScheduledBookings(scheduledBookings.filter((schedule) => schedule._id !== id));
+		setCompletedBookings(completedBookings.filter((schedule) => schedule._id !== id));
+	  };
+	
+	  const handleComplete = (completedSchedule) => {
+		setScheduledBookings(scheduledBookings.filter((schedule) => schedule._id !== completedSchedule._id));
+		setCompletedBookings([...completedBookings, completedSchedule]);
+	  };
+	
 
 	return (
 		<>
@@ -57,6 +58,7 @@ const SchedulePage = ({ formatTime }) => {
 						key={schedule._id}
 						schedule={schedule}
 						handleDelete={handleDelete}
+						handleComplete={handleComplete}
 						formatTime={formatTime}
 					/>
 				))}

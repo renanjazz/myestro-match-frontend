@@ -10,9 +10,6 @@ import { AuthContext } from './context/auth.context.jsx';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import IsPrivate from './components/IsPrivate';
-import ScheduleCard from './components/ScheduleCard';
-import StudioCard from './components/StudioCard';
-import TeacherCard from './components/TeacherCard';
 // Pages
 import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
@@ -26,6 +23,7 @@ import TeacherPage from './pages/TeacherPage';
 import TeacherDetailsPage from './pages/TeacherDetailsPage';
 import UserProfilePage from './pages/UserProfilePage';
 import EditUserPage from './pages/EditUserPage';
+import EditScheduleReqPage from './pages/EditScheduleReqPage.jsx';
 
 function App() {
 	const [profileUser, setProfileUser] = useState(null);
@@ -127,6 +125,7 @@ function App() {
 							/>
 						}
 					/>
+					<Route path='/edit-schedule-date' element={<EditScheduleReqPage/>}/>
 				</Routes>
 				<Footer />
 			</div>

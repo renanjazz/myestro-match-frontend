@@ -13,8 +13,7 @@ const CompletedClassCard = ({ schedule, formatTime }) => {
 						schedule.teacher.attendance_type.map((atteType, index) => (
 							<p key={index}>{atteType}</p>
 						))}
-					<p>{schedule.teacher.price_per_session}€/session</p>
-					<p>{schedule.status}</p>
+					<p>Status: {schedule.status}</p>
 					<br />
 				</div>
 			)}
