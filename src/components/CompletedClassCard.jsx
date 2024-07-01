@@ -1,21 +1,6 @@
 import React from 'react';
 
-const CompletedClassCard = ({ schedule }) => {
-	const formatTime = (time) => {
-		const timeStr = time.toString();
-		if (timeStr.length === 4) {
-			return timeStr.slice(0, 2) + ':' + timeStr.slice(2);
-		} else if (timeStr.length === 3) {
-			return '0' + timeStr.slice(0, 1) + ':' + timeStr.slice(1);
-		}
-		return timeStr;
-	};
-
-	async function handleDeleteSchedule() {
-		try {
-		} catch (error) {}
-	}
-
+const CompletedClassCard = ({ schedule, formatTime }) => {
 	return (
 		<div className="teachers-page">
 			{schedule && schedule.teacher && (

@@ -2,16 +2,8 @@ import axios from 'axios';
 import React from 'react';
 import { API_URL } from '../config';
 
-const ScheduleCard = ({ schedule, handleDelete }) => {
-	const formatTime = (time) => {
-		const timeStr = time.toString(); 
-		if (timeStr.length === 4) {
-			return timeStr.slice(0, 2) + ':' + timeStr.slice(2);
-		}else if(timeStr.length===3){
-      return "0" + timeStr.slice(0, 1) + ':' + timeStr.slice(1);
-    }
-		return timeStr; 
-	};
+const ScheduleCard = ({ schedule, handleDelete, formatTime }) => {
+	
 
   const handleDeleteSchedule = async () => {
     try {

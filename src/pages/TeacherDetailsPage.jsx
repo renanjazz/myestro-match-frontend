@@ -54,7 +54,7 @@ const TeacherDetailsPage = () => {
 		try {
 			const { start_time, day_of_week, _id } = choosenDay;
 			await axios.post(`${API_URL}/schedule/api/class-schedule`, {
-				user: currUser.id,
+				user: currUser._id,
 				teacher: teacherId,
 				start_time,
 				day_of_week,

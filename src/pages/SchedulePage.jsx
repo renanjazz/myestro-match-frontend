@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../config';
 import ScheduleCard from '../components/ScheduleCard';
-import CanceledScheduleCard from '../components/CanceledScheduleCard';
+import { AuthContext } from '../context/auth.context.jsx';
 import CompletedClassCard from '../components/CompletedClassCard';
 
-const SchedulePage = () => {
+const SchedulePage = ({ formatTime }) => {
+	const { currUser } = useContext(AuthContext);
 	const [scheduledBookings, setScheduledBookings] = useState([]);
-	const [canceledBookings, setCanceledBookings] = useState([]);
 	const [completedBookings, setCompletedBookings] = useState([]);
 
 	useEffect(() => {
 		const fetchSchedule = async () => {
+			if (!currUser) return;
+
 			try {
 				const { data } = await axios.get(
-					`${API_URL}/schedule/api/class-schedule`
+					`${API_URL}/schedule/api/class-schedule`,
+					{
+						params: { userId: currUser._id },
+					}
 				);
-				console.log('These is the schedule', data);
+				console.log('This is the schedule', data);
 
 				const scheduled = data.filter((item) => item.status === 'Scheduled');
-				const canceled = data.filter((item) => item.status === 'Canceled');
+
 				const completed = data.filter((item) => item.status === 'Completed');
 				setScheduledBookings(scheduled);
-				setCanceledBookings(canceled);
+
 				setCompletedBookings(completed);
 			} catch (error) {
 				console.log('Error fetching the schedule', error);
 			}
 		};
+
 		fetchSchedule();
-	}, []);
+	}, [currUser]);
 
 	const handleDelete = (id) => {
 		setScheduledBookings(
 			scheduledBookings.filter((schedule) => schedule._id !== id)
-		);
-		setCanceledBookings(
-			canceledBookings.filter((schedule) => schedule._id !== id)
 		);
 		setCompletedBookings(
 			completedBookings.filter((schedule) => schedule._id !== id)
@@ -54,6 +57,7 @@ const SchedulePage = () => {
 						key={schedule._id}
 						schedule={schedule}
 						handleDelete={handleDelete}
+						formatTime={formatTime}
 					/>
 				))}
 
@@ -63,6 +67,7 @@ const SchedulePage = () => {
 					<CompletedClassCard
 						key={schedule._id}
 						schedule={schedule}
+						formatTime={formatTime}
 					/>
 				))}
 

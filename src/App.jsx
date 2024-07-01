@@ -49,10 +49,20 @@ function App() {
 
 	console.log('this is user', currUser);
 
+	const formatTime = (time) => {
+		const timeStr = time.toString();
+		if (timeStr.length === 4) {
+			return timeStr.slice(0, 2) + ':' + timeStr.slice(2);
+		} else if (timeStr.length === 3) {
+			return '0' + timeStr.slice(0, 1) + ':' + timeStr.slice(1);
+		}
+		return timeStr;
+	};
+
 	return (
 		<>
 			<div className="body-of-app">
-				<Navbar profileUser={profileUser}/>
+				<Navbar profileUser={profileUser} />
 				<Routes>
 					<Route
 						path="/"
@@ -79,7 +89,7 @@ function App() {
 						element={
 							<IsPrivate>
 								{' '}
-								<SchedulePage />{' '}
+								<SchedulePage formatTime={formatTime} />{' '}
 							</IsPrivate>
 						}
 					/>
@@ -89,7 +99,7 @@ function App() {
 					/>
 					<Route
 						path="/studios/:studioId"
-						element={<StudiosDetailsPage />}
+						element={<StudiosDetailsPage formatTime={formatTime} />}
 					/>
 					<Route
 						path="/teacher"
@@ -97,7 +107,7 @@ function App() {
 					/>
 					<Route
 						path="/teacher/:teacherId"
-						element={<TeacherDetailsPage />}
+						element={<TeacherDetailsPage formatTime={formatTime} />}
 					/>
 					<Route
 						path="/profile"
@@ -110,7 +120,12 @@ function App() {
 					/>
 					<Route
 						path="/edit-user-profile"
-						element={<EditUserPage profileUser={profileUser} setProfileUser={setProfileUser}/>}
+						element={
+							<EditUserPage
+								profileUser={profileUser}
+								setProfileUser={setProfileUser}
+							/>
+						}
 					/>
 				</Routes>
 				<Footer />
