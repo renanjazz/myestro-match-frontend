@@ -5,15 +5,14 @@ const TeacherCard = ({ teacher }) => {
   return (
     <>
       <div className="teacher-card">
-        <h2>{teacher.fullname}</h2>
-        <h5>
-          Instrument:
-          {teacher.instrument}
-        </h5>
-        <h5>Presence: {teacher.attendance_type}</h5>
-        <h5>Rating: {teacher.rating}</h5>
+        <h3>{teacher.fullname}</h3>
+        <p>
+          Instrument: {teacher.instrument}
+        </p>
+        <p>Presence: {teacher.attendance_type}</p>
+        <p>Rating: {teacher.rating}</p>
         <Link to={`/teacher/${teacher._id}`}>
-          <button>Know more</button>
+          <button className="teacher-page-button">Know more</button>
         </Link>
       </div>
     </>
@@ -21,3 +20,5 @@ const TeacherCard = ({ teacher }) => {
 };
 
 export default TeacherCard;
+
+// where is the teacher picture? <<<<<<<<<<<<<<<<<<<

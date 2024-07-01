@@ -204,7 +204,7 @@ button {
 	color: #f0f0f0;
 	font-family: 'neue-haas-grotesk-text', sans-serif;
 	font-weight: light;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
@@ -216,7 +216,93 @@ button {
 	color: #f0f0f0;
 	font-family: 'neue-haas-grotesk-text', sans-serif;
 	font-weight: light;
+    font-size: 0.9rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #101010;
+    font-weight: lighter;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #101010;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.teachers-page{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.teacher-card{
+    display: flex;
+    background-color:rgb(255, 255, 255, 0.25);
+    margin-bottom: 10px;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 10px;
+    line-height: 0;
+}
+
+h3 {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #101010;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+p {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #101010;
+    font-weight: lighter;
 	font-size: 1rem;
+}
+
+.teacher-page-button{
+    color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #F0F0F0;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.teacher-page-button:hover{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.teacher-page-button.selected{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
