@@ -4,7 +4,7 @@ import axios from 'axios';
 import { API_URL } from '../../config';
 import { useParams } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
-
+import { useNavigate } from 'react-router-dom';
 const TeacherDetailsPage = () => {
 	const { teacherId } = useParams();
 	const [teacherDetails, setTeacherDetails] = useState([]);
@@ -13,8 +13,20 @@ const TeacherDetailsPage = () => {
 	const [errora, setErrora] = useState(null);
 	const { currUser } = useContext(AuthContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const nav = useNavigate()
 
 	console.log(teacherId);
+
+	const formatTime = (time) => {
+		const timeStr = time.toString(); 
+		if (timeStr.length === 4) {
+			return timeStr.slice(0, 2) + ':' + timeStr.slice(2);
+		}else if(timeStr.length===3){
+      return "0" + timeStr.slice(0, 1) + ':' + timeStr.slice(1);
+    }
+		return timeStr; 
+	};
+
 
 	useEffect(() => {
 		setErrora(null);
@@ -56,6 +68,7 @@ const TeacherDetailsPage = () => {
 			);
 			setChoosenDay(null);
 			setIsModalOpen(false);
+			nav("/schedule")
 			alert('Booking confirmed!');
 		} catch (error) {
 			setErrora('Error booking the date. Please try again.');
@@ -119,7 +132,7 @@ const TeacherDetailsPage = () => {
 							.map((date) => (
 								<div key={date._id}>
 									<button onClick={() => setChoosenDay(date)}>
-										{date.day_of_week} - {date.start_time}
+										{date.day_of_week} - {formatTime(date.start_time)}
 									</button>
 								</div>
 							))
@@ -131,7 +144,7 @@ const TeacherDetailsPage = () => {
 					<div>
 						<h4>Chosen date:</h4>
 						<p>
-							{choosenDay.day_of_week} - {choosenDay.start_time}
+							{choosenDay.day_of_week} - {formatTime(choosenDay.start_time)}
 						</p>
 						{isModalOpen && (
 							<div className="modal-overlay">
@@ -141,7 +154,7 @@ const TeacherDetailsPage = () => {
 										<>
 											<p>
 												Do you want to book a session on{' '}
-												{choosenDay.day_of_week} at {choosenDay.start_time} for{' '}
+												{choosenDay.day_of_week} at {formatTime(choosenDay.start_time)} for{' '}
 												{teacherDetails.price_per_session}€/session?
 											</p>
 											<button onClick={handleBooking}>Confirm</button>

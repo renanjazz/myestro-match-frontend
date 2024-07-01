@@ -44,7 +44,7 @@ const Navbar = () => {
       {showMenu && (
         <div className="opened-nav">
           <div className="nav-row">
-            <Link to="/teachers">
+            <Link to="/teacher">
               <button className="nav-link">Find a teacher</button>
             </Link>
             <Link to="/schedule">
@@ -52,7 +52,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="nav-row">
-            <Link to="/studio">
+            <Link to="/studios">
               <button className="nav-link">Find a studio</button>
             </Link>
             <Link to="/profile">
