@@ -66,7 +66,7 @@ const SchedulePage = () => {
 					/>
 				))}
 
-				<button>See Favourites</button>
+				<button className="teacher-page-button">See Favourites</button>
 			</div>
 		</>
 	);

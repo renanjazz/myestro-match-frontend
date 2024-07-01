@@ -55,7 +55,7 @@ const ScheduleCard = ({ schedule, handleDelete }) => {
 					<div>
 						<button className="teacher-page-button" onClick={handleDeleteSchedule}>Cancel class</button>
 						<button className="teacher-page-button" onClick={handleUpdateSchedule}>Change time</button>
-            <button onClick={handleCompleteSchedule}>Mark as complete</button>
+            <button className="teacher-page-button" onClick={handleCompleteSchedule}>Mark as complete</button>
 					</div>
 				</div>
 			)}
