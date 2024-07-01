@@ -109,9 +109,9 @@ const SignUpPage = () => {
 						onChange={(event) => setExperienceLevel(event.target.value)}
 					>
 						<option value="">Select</option>
-						<option value="One">One</option>
-						<option value="Two">Two</option>
-						<option value="Three">Three</option>
+						<option value="Beginner">Beginner</option>
+						<option value="Intermediate">Intermediate</option>
+						<option value="Advanced">Advanced</option>
 					</select>
 				</label>
 				<label>
