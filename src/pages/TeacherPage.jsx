@@ -23,9 +23,9 @@ const TeacherPage = () => {
 
   return (
     <>
-    <div>
+    <div className="teachers-page">
       <h2>Teachers</h2>
-      <h4>{teachers.length} Teachers found</h4>
+      <h4>{teachers.length} teachers found</h4>
       {teachers.map((teacher)=><TeacherCard key={teacher._id} teacher={teacher} />)}
     </div>
     </>
