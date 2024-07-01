@@ -44,18 +44,17 @@ const ScheduleCard = ({ schedule, handleDelete }) => {
 			{schedule && schedule.teacher && (
 				<div className="teacher-card">
 					<p>
-						{schedule.teacher.fullname}, {schedule.teacher.instrument}, every {schedule.day_of_week} at {formatTime(schedule.start_time)}
+						<strong>{schedule.teacher.fullname}</strong>, {schedule.teacher.instrument}, every {schedule.day_of_week} at {formatTime(schedule.start_time)}
 					</p>
 					{Array.isArray(schedule.teacher.attendance_type) &&
 						schedule.teacher.attendance_type.map((atteType, index) => (
 							<p key={index}>{atteType}</p>
 						))}
-					<p>{schedule.teacher.price_per_session}€/session</p>
-					<p>{schedule.status}</p>
+					<p>Status: {schedule.status}</p>
 					<br />
 					<div>
-						<button onClick={handleDeleteSchedule}>Cancel class</button>
-						<button onClick={handleUpdateSchedule}>Change time</button>
+						<button className="teacher-page-button" onClick={handleDeleteSchedule}>Cancel class</button>
+						<button className="teacher-page-button" onClick={handleUpdateSchedule}>Change time</button>
             <button onClick={handleCompleteSchedule}>Mark as complete</button>
 					</div>
 				</div>

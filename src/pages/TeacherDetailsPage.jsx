@@ -103,35 +103,31 @@ const TeacherDetailsPage = () => {
 				<img
 					src={teacherDetails.picture}
 					alt={teacherDetails.fullname}
-					style={{ height: '200px' }}
+					style={{ height: '50px' }}
 				/>
 				<h3>{teacherDetails.rating}</h3>
-				<h3>About me:</h3>
-				<p>{teacherDetails.description}</p>
-				<p>
-					<strong>Email:</strong>
+				<h3 className='about-me'>About me:</h3>
+				<p className='teacher-details-text'>{teacherDetails.description}</p>
+				<p className='teacher-details-text' >
+					<strong>Email:</strong> {teacherDetails.email}
 				</p>
-				<p>{teacherDetails.email}</p>
-				<p>
-					<strong>Instrument:</strong>
+				<p className='teacher-details-text'>
+					<strong>Instrument:</strong> {teacherDetails.instrument}
 				</p>
-				<p>{teacherDetails.instrument}</p>
-				<p>
-					<strong>Price/hour</strong>
+				<p className='teacher-details-text'>
+					<strong>Price/hour:</strong> {teacherDetails.price_per_session}€
 				</p>
-				<p>{teacherDetails.price_per_session}€</p>
-				<p>
-					<strong>Attendance type</strong>
+				<p className='teacher-details-text'>
+					<strong>Attendance type:</strong> {teacherDetails.attendance_type}
 				</p>
-				<p>{teacherDetails.attendance_type}</p>
 				<h3>Available dates:</h3>
-				<div>
+				<div className='available-dates'>
 					{availability.length > 0 ? (
 						availability
 							.filter((date) => !date.reserved)
 							.map((date) => (
 								<div key={date._id}>
-									<button onClick={() => setChoosenDay(date)}>
+									<button className='available-dates-button' onClick={() => setChoosenDay(date)}>
 										{date.day_of_week} - {formatTime(date.start_time)}
 									</button>
 								</div>
@@ -142,10 +138,6 @@ const TeacherDetailsPage = () => {
 				</div>
 				{choosenDay && (
 					<div>
-						<h4>Chosen date:</h4>
-						<p>
-							{choosenDay.day_of_week} - {formatTime(choosenDay.start_time)}
-						</p>
 						{isModalOpen && (
 							<div className="modal-overlay">
 								<div className="modal">
@@ -169,7 +161,7 @@ const TeacherDetailsPage = () => {
 				<br />
 
 				<br />
-				<button onClick={openModal}>Book session</button>
+				<button className="teacher-page-button" onClick={openModal}>Book session</button>
 				<br />
 				<div>{errora && <p className="error-message">{errora}</p>}</div>
 
