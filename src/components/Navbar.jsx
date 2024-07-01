@@ -48,7 +48,7 @@ const Navbar = () => {
               <button className="nav-link">Find a teacher</button>
             </Link>
             <Link to="/schedule">
-              <button className="nav-link">Class schedule</button>
+              <button className="nav-link">My schedule</button>
             </Link>
           </div>
           <div className="nav-row">

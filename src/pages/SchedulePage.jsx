@@ -29,6 +29,7 @@ const SchedulePage = () => {
 				<h2>My Bookings</h2>
 				<h4>Upcoming {schedule.length}</h4>
 				<h4>
+					
 					{schedule.map((schedule) => (
 						<ScheduleCard
 							key={schedule._id}
