@@ -4,10 +4,9 @@ import axios from "axios";
 import { API_URL } from "../../config";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const StudiosDetailsPage = () => {
+const StudiosDetailsPage = ({ formatTime }) => {
   const { studioId } = useParams();
   const [studioDetails, setStudioDetails] = useState([]);
   const [slots, setSlots] = useState([]);
@@ -18,16 +17,6 @@ const StudiosDetailsPage = () => {
   const nav = useNavigate();
 
   console.log(studioId);
-
-  const formatTime = (time) => {
-    const timeStr = time.toString();
-    if (timeStr.length === 4) {
-      return timeStr.slice(0, 2) + ":" + timeStr.slice(2);
-    } else if (timeStr.length === 3) {
-      return "0" + timeStr.slice(0, 1) + ":" + timeStr.slice(1);
-    }
-    return timeStr;
-  };
 
   useEffect(() => {
     setError(null);
@@ -57,7 +46,7 @@ const StudiosDetailsPage = () => {
     try {
       const { start_time, day_of_week, _id } = chosenDay;
       await axios.post(`${API_URL}/bookings/api/slot`, {
-        user: currUser.id,
+        user: currUser._id,
         studio: studioId,
         start_time,
         day_of_week,
