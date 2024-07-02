@@ -57,7 +57,7 @@ const StudiosDetailsPage = () => {
     try {
       const { start_time, day_of_week, _id } = chosenDay;
       await axios.post(`${API_URL}/bookings/api/slot`, {
-        user: currUser.id,
+        user: currUser._id,
         studio: studioId,
         start_time,
         day_of_week,
