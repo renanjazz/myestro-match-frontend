@@ -100,11 +100,12 @@ const TeacherDetailsPage = () => {
     <>
       <div className="teacher-details">
         <h2>{teacherDetails.fullname}</h2>
-        <img
+        <div className="image-box">
+		<img className="teacher-studio-picture"
           src={teacherDetails.picture}
           alt={teacherDetails.fullname}
-          style={{ height: "50px" }}
         />
+		</div>
         <h3>{teacherDetails.rating}</h3>
         <h3 className="about-me">About me:</h3>
         <p className="teacher-details-text">{teacherDetails.description}</p>
@@ -153,8 +154,8 @@ const TeacherDetailsPage = () => {
                         {formatTime(choosenDay.start_time)} for{" "}
                         {teacherDetails.price_per_session}€/session?
                       </p>
-                      <button onClick={handleBooking}>Confirm</button>
-                      <button onClick={closeModal}>Cancel</button>
+                      <button className="teacher-page-button" onClick={handleBooking}>Confirm</button>
+                      <button className="teacher-page-button" onClick={closeModal}>Cancel</button>
                     </>
                   )}
                 </div>

@@ -458,3 +458,17 @@ input::file-selector-button {
 	vertical-align: middle;
 }
 
+.image-box{
+	display: flex;
+	justify-content: center;
+}
+
+.teacher-studio-picture{
+	height: 125px;
+	width: 125px;
+	border-radius: 50%;
+	border: solid 2px #101010;
+	margin-top: -10px;
+	margin-bottom: -30px;
+
+}
