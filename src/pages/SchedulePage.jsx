@@ -1,129 +1,155 @@
-import React, { useContext, useState, useEffect } from "react";
-import axios from "axios";
-import { API_URL } from "../../config";
-import ScheduleCard from "../components/ScheduleCard";
-import { AuthContext } from "../context/auth.context.jsx";
-import CompletedClassCard from "../components/CompletedClassCard";
-import BookingCard from "../components/BookingCard.jsx";
-import CompletedBookingCard from "../components/CompletedBookingCard.jsx";
+import React, { useContext, useState, useEffect } from 'react';
+import axios from 'axios';
+import { API_URL } from '../../config';
+import ScheduleCard from '../components/ScheduleCard';
+import { AuthContext } from '../context/auth.context.jsx';
+import CompletedClassCard from '../components/CompletedClassCard';
+import BookingCard from '../components/BookingCard.jsx';
+import CompletedBookingCard from '../components/CompletedBookingCard.jsx';
 
 const SchedulePage = ({ formatTime }) => {
-  const { currUser } = useContext(AuthContext);
-  const [scheduledClasses, setScheduledClasses] = useState([]);
-  const [completedClasses, setCompletedClasses] = useState([]);
-  const [scheduledBooking, setScheduledBookings] = useState([]);
-  const [completedBooking, setCompletedBookings] = useState([]);
+	const { currUser } = useContext(AuthContext);
+	const [scheduledClasses, setScheduledClasses] = useState([]);
+	const [completedClasses, setCompletedClasses] = useState([]);
+	const [scheduledBooking, setScheduledBookings] = useState([]);
+	const [completedBooking, setCompletedBookings] = useState([]);
+	//fetch classes info
+	useEffect(() => {
+		const fetchClasses = async () => {
+			if (!currUser) return;
 
-  useEffect(() => {
-    const fetchClasses = async () => {
-      if (!currUser) return;
+			try {
+				const { data } = await axios.get(
+					`${API_URL}/schedule/api/class-schedule`,
+					{
+						params: { userId: currUser._id },
+					}
+				);
+				console.log('This is the schedule', data);
 
-      try {
-        const { data } = await axios.get(
-          `${API_URL}/schedule/api/class-schedule`,
-          {
-            params: { userId: currUser._id },
-          }
-        );
-        console.log("This is the schedule", data);
+				const scheduled = data.filter((item) => item.status === 'Scheduled');
 
-        const scheduled = data.filter((item) => item.status === "Scheduled");
+				const completed = data.filter((item) => item.status === 'Completed');
+				setScheduledClasses(scheduled);
+				setCompletedClasses(completed);
+			} catch (error) {
+				console.log('Error fetching the schedule', error);
+			}
+		};
 
-        const completed = data.filter((item) => item.status === "Completed");
-        setScheduledClasses(scheduled);
-        setCompletedClasses(completed);
-      } catch (error) {
-        console.log("Error fetching the schedule", error);
-      }
-    };
+		fetchClasses();
+	}, [currUser]);
+	//fetch booking info
+	useEffect(() => {
+		const fetchBookings = async () => {
+			if (!currUser) return;
 
-    fetchClasses();
-  }, [currUser]);
+			try {
+				const { data } = await axios.get(
+					`${API_URL}/bookings/api/studio-booking`,
+					{
+						params: { userId: currUser._id },
+					}
+				);
+				console.log('This is the booking', data);
 
-  useEffect(() => {
-    const fetchBookings = async () => {
-      if (!currUser) return;
+				const booked = data.filter((item) => item.status === 'Booked');
 
-      try {
-        const { data } = await axios.get(
-          `${API_URL}/bookings/api/studio-booking`,
-          {
-            params: { userId: currUser._id },
-          }
-        );
-        console.log("This is the booking", data);
+				const completed = data.filter((item) => item.status === 'Completed');
+				setScheduledBookings(booked);
+				setCompletedBookings(completed);
+			} catch (error) {
+				console.log('Error fetching the booking', error);
+			}
+		};
 
-        const booked = data.filter((item) => item.status === "Booked");
+		fetchBookings();
+	}, [currUser]);
 
-        const completed = data.filter((item) => item.status === "Completed");
-        setScheduledBookings(booked);
-        setCompletedBookings(completed);
-      } catch (error) {
-        console.log("Error fetching the booking", error);
-      }
-    };
+	//functions for the schedule(classes/teachers)
+	const handleDelete = (id) => {
+		setScheduledClasses(
+			scheduledClasses.filter((schedule) => schedule._id !== id)
+		);
+	};
 
-    fetchBookings();
-  }, [currUser]);
+	const handleComplete = (completedSchedule) => {
+		setScheduledClasses(
+			scheduledClasses.filter(
+				(schedule) => schedule._id !== completedSchedule._id
+			)
+		);
+		setCompletedClasses((prevCompletedClasses) => [
+			...prevCompletedClasses,
+			completedSchedule,
+		]);
+	};
 
-  const handleDelete = (id) => {
-    setScheduledClasses(
-      scheduledClasses.filter((schedule) => schedule._id !== id)
-    );
-    setCompletedClasses(
-      completedClasses.filter((schedule) => schedule._id !== id)
-    );
-  };
+	//functions for the bookings(rentals/studios)
 
-  const handleComplete = (completedSchedule) => {
-    setScheduledClasses(
-      scheduledClasses.filter(
-        (schedule) => schedule._id !== completedSchedule._id
-      )
-    );
-    setCompletedClasses((prevCompletedClasses) => [
-      ...prevCompletedClasses,
-      completedSchedule,
-    ]);
-  };
+	function handleBookingDelete(id) {
+		setScheduledBookings(
+			scheduledBooking.filter((booking) => {
+				booking._id !== id;
+			})
+		);
+	}
 
+	function handleBookingComplete(completedBooking) {
+		setScheduledBookings(
+			scheduledBooking.filter((booking) => {
+				booking._id !== completedBooking._id;
+			})
+		);
+		setCompletedBookings((previousbookings) => {
+			[...previousbookings, completedBooking];
+		});
+	}
+	return (
+		<>
+			<div>
+				<h2>My Schedule</h2>
 
-  return (
-    <>
-      <div>
-        <h2>My Schedule</h2>
+				<h3>Upcoming {scheduledClasses.length + scheduledBooking.length} </h3>
+				{scheduledClasses.map((schedule) => (
+					<ScheduleCard
+						key={schedule._id}
+						schedule={schedule}
+						handleDelete={handleDelete}
+						handleComplete={handleComplete}
+						formatTime={formatTime}
+					/>
+				))}
+				{scheduledBooking.map((booking) => (
+					<BookingCard
+						key={booking._id}
+						booking={booking}
+						formatTime={formatTime}
+						handleBookingDelete={handleBookingDelete}
+						handleBookingComplete={handleBookingComplete}
+					/>
+				))}
 
-        <h3>Upcoming {scheduledClasses.length + scheduledBooking.length} </h3>
-        {scheduledClasses.map((schedule) => (
-          <ScheduleCard
-            key={schedule._id}
-            schedule={schedule}
-            handleDelete={handleDelete}
-            handleComplete={handleComplete}
-            formatTime={formatTime}
-          />
-        ))}
-        {scheduledBooking.map((booking) => (
-          <BookingCard
-            key={booking._id}
-            booking={booking}
-            formatTime={formatTime}
-          />
-        ))}
+				<h3>Completed {completedClasses.length + completedBooking.length}</h3>
+				{completedClasses.map((schedule) => (
+					<CompletedClassCard
+						key={schedule._id}
+						schedule={schedule}
+						formatTime={formatTime}
+					/>
+				))}
+				{completedBooking.map((booking) => (
+					<CompletedBookingCard
+						key={booking._id}
+						booking={booking}
+						formatTime={formatTime}
+					/>
+				))}
 
-        <h3>Completed {completedClasses.length}</h3>
-        {completedClasses.map((schedule) => (
-          <CompletedClassCard
-            key={schedule._id}
-            schedule={schedule}
-            formatTime={formatTime}
-          />
-        ))}
-
-        <button className="teacher-page-button">See Favourites</button>
-      </div>
-    </>
-  );
+				<button className="teacher-page-button">See Favourites</button>
+			</div>
+		</>
+	);
 };
 
 export default SchedulePage;
