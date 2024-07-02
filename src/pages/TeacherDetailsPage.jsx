@@ -148,7 +148,7 @@ const TeacherDetailsPage = () => {
                   {choosenDay && (
                     <>
                       <p>
-                        Do you want to book a session on{" "}
+                        Do you want to book a session with <strong>{teacherDetails.fullname} </strong> on{" "}
                         {choosenDay.day_of_week} at{" "}
                         {formatTime(choosenDay.start_time)} for{" "}
                         {teacherDetails.price_per_session}€/session?

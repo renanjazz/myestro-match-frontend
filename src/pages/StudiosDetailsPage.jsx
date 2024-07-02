@@ -45,7 +45,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
   async function handleBooking() {
     try {
       const { start_time, day_of_week, _id } = chosenDay;
-      await axios.post(`${API_URL}/bookings/api/slot`, {
+      await axios.post(`${API_URL}/bookings/api/studio-booking`, {
         user: currUser._id,
         studio: studioId,
         start_time,
@@ -127,7 +127,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
                   {chosenDay && (
                     <>
                       <p>
-                        Do you want to book a session on {chosenDay.day_of_week}{" "}
+                        Do you want to book a session at <strong>{studioDetails.studio_name} </strong> on {chosenDay.day_of_week}{" "}
                         at {formatTime(chosenDay.start_time)} for{" "}
                         {studioDetails.rental_price}€/session?
                       </p>

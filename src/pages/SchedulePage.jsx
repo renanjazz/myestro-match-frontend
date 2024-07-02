@@ -107,14 +107,14 @@ const SchedulePage = ({ formatTime }) => {
           />
         ))}
 
-        {/* <h3>Completed {completedClasses.length}</h3>
+        <h3>Completed {completedClasses.length}</h3>
         {completedClasses.map((schedule) => (
           <CompletedClassCard
             key={schedule._id}
             schedule={schedule}
             formatTime={formatTime}
           />
-        ))} */}
+        ))}
 
         <button className="teacher-page-button">See Favourites</button>
       </div>
