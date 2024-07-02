@@ -32,7 +32,7 @@ const EditUserPage = ({ profileUser, setProfileUser }) => {
     formData.append('experience_level', experienceLevel);
     formData.append('instrument', instrument);
     if (userImage) {
-      formData.append('userImage', userImage);
+      formData.append('imageUrl', userImage);
     }
 
     try {
@@ -123,14 +123,7 @@ const EditUserPage = ({ profileUser, setProfileUser }) => {
             onChange={(event) => setUserImage(event.target.files[0])}
           />
         </label>
-        <label>
-          <input
-            name="image"
-            type="text"
-            value={userImage}
-            onChange={(event) => setUserImage(event.target.value)}
-          />
-        </label>
+
         {error && <p className="error-message">{error}</p>}
         <button type="submit">Update Info</button>
       </form>
