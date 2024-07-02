@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from "../../config";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 
@@ -98,7 +98,7 @@ const TeacherDetailsPage = () => {
 
   return (
     <>
-      <div className="teacher-details">
+      <div className="teacher-studio-details">
         <h2>{teacherDetails.fullname}</h2>
         <div className="image-box">
 		<img className="teacher-studio-picture"
@@ -108,17 +108,17 @@ const TeacherDetailsPage = () => {
 		</div>
         <h3>{teacherDetails.rating}</h3>
         <h3 className="about-me">About me:</h3>
-        <p className="teacher-details-text">{teacherDetails.description}</p>
-        <p className="teacher-details-text">
+        <p className="teacher-studio-details-text">{teacherDetails.description}</p>
+        <p className="teacher-studio-details-text">
           <strong>Email:</strong> {teacherDetails.email}
         </p>
-        <p className="teacher-details-text">
+        <p className="teacher-studio-details-text">
           <strong>Instrument:</strong> {teacherDetails.instrument}
         </p>
-        <p className="teacher-details-text">
+        <p className="teacher-studio-details-text">
           <strong>Price/hour:</strong> {teacherDetails.price_per_session}€
         </p>
-        <p className="teacher-details-text">
+        <p className="teacher-studio-details-text">
           <strong>Attendance type:</strong> {teacherDetails.attendance_type}
         </p>
         <h3>Available dates:</h3>
@@ -137,7 +137,7 @@ const TeacherDetailsPage = () => {
                 </div>
               ))
           ) : (
-            <p>No available dates</p>
+            <p className="error-message">No available dates</p>
           )}
         </div>
         {choosenDay && (
@@ -145,7 +145,7 @@ const TeacherDetailsPage = () => {
             {isModalOpen && (
               <div className="modal-overlay">
                 <div className="modal">
-                  <h2>Confirm Booking</h2>
+                  <h2>Confirm booking</h2>
                   {choosenDay && (
                     <>
                       <p>
@@ -155,8 +155,8 @@ const TeacherDetailsPage = () => {
                         {teacherDetails.price_per_session}€/session?
                       </p>
 					  <div className="modal-buttons">
-                      <button className="teacher-page-button" onClick={handleBooking}>Confirm</button>
-                      <button className="teacher-page-button" onClick={closeModal}>Cancel</button>
+                      <button className="modal-button" onClick={handleBooking}>Confirm</button>
+                      <button className="modal-button" onClick={closeModal}>Cancel</button>
 					  </div>
                     </>
                   )}
@@ -168,9 +168,17 @@ const TeacherDetailsPage = () => {
         <br />
 
         <br />
-        <button className="teacher-page-button" onClick={openModal}>
+		<div className="book-back-box">
+        <button className="book-back-button" onClick={openModal}>
           Book session
         </button>
+        <br />
+		<Link to={"/teacher"}>
+		<button className="book-back-button">
+          Back
+        </button>
+		</Link>
+		</div>
         <br />
         <div>{errora && <p className="error-message">{errora}</p>}</div>
 

@@ -87,7 +87,7 @@ const SchedulePage = ({ formatTime }) => {
   return (
     <>
       <div>
-        <h2>My Schedule</h2>
+        <h2>My schedule</h2>
 
         <h3>Upcoming {scheduledClasses.length + scheduledBooking.length} </h3>
         {scheduledClasses.map((schedule) => (
