@@ -106,7 +106,7 @@ function App() {
               />
             }
           />
-          <Route path="/edit-schedule-date" element={<EditScheduleReqPage />} />
+          <Route path="/edit-schedule-date/:id" element={<EditScheduleReqPage formatTime={formatTime}/>} />
         </Routes>
         <Footer />
       </div>

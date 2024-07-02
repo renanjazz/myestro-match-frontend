@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 
-const TeacherDetailsPage = () => {
+const TeacherDetailsPage = ({formatTime}) => {
   const { teacherId } = useParams();
   const [teacherDetails, setTeacherDetails] = useState([]);
   const [availability, setAvailability] = useState([]);
@@ -18,17 +18,7 @@ const TeacherDetailsPage = () => {
 
   console.log(teacherId);
 
-  const formatTime = (time) => {
-    const timeStr = time.toString();
-    if (timeStr.length === 4) {
-      return timeStr.slice(0, 2) + ":" + timeStr.slice(2);
-    } else if (timeStr.length === 3) {
-      return "0" + timeStr.slice(0, 1) + ":" + timeStr.slice(1);
-    }
-    return timeStr;
-  };
-
-  useEffect(() => {
+   useEffect(() => {
     setErrora(null);
     const fetchTeacher = async () => {
       try {
@@ -95,6 +85,7 @@ const TeacherDetailsPage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  
 
   return (
     <>

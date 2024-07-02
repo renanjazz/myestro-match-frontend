@@ -81,8 +81,12 @@ const SchedulePage = ({ formatTime }) => {
         (schedule) => schedule._id !== completedSchedule._id
       )
     );
-    setCompletedClasses([...completedClasses, completedSchedule]);
+    setCompletedClasses((prevCompletedClasses) => [
+      ...prevCompletedClasses,
+      completedSchedule,
+    ]);
   };
+
 
   return (
     <>

@@ -1,16 +1,17 @@
 import React from "react";
 
 const CompletedClassCard = ({ schedule, formatTime }) => {
+  const {teacher} = schedule
   return (
     <div className="teachers-page">
-      {schedule && schedule.teacher && (
+      {schedule && teacher && (
         <div className="teacher-card">
           <p>
-            {schedule.teacher.fullname}, {schedule.teacher.instrument}, every{" "}
+            {teacher.fullname}, {teacher.instrument}, every{" "}
             {schedule.day_of_week} at {formatTime(schedule.start_time)}
           </p>
-          {Array.isArray(schedule.teacher.attendance_type) &&
-            schedule.teacher.attendance_type.map((atteType, index) => (
+          {Array.isArray(teacher.attendance_type) &&
+            teacher.attendance_type.map((atteType, index) => (
               <p key={index}>{atteType}</p>
             ))}
           <p>Status: {schedule.status}</p>
