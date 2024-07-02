@@ -29,32 +29,35 @@ const LoginPage = () => {
   return (
     <div>
       <h2>Welcome back!</h2>
-      <form onSubmit={handleLogin}>
+      <form className='form-body' onSubmit={handleLogin}>
         <label>
-          Username:
+          Username: 
           <input
             name="username"
             type="text"
             value={username}
-            placeholder='your username'
+            placeholder=' saltedPork'
             onChange={(event) => setUsername(event.target.value)}
           />
         </label>
         <label>
-          Password:
+          Password: 
           <input
             name="password"
             type="password"
             value={password}
-            placeholder='your password'
+            placeholder=' ********'
             onChange={(event) => setPassword(event.target.value)}
           />
         </label>
-        <button type="submit">Login!</button>
+
+        <br />
+
+        <button className="teacher-page-button" type="submit">Login!</button>
       </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p className='error-message' >{error}</p>}
       <br />
-      <h3>Not a member yet? <a href="/signup">Sign up now!</a></h3>
+      <h3 className='signup-login-cta'>Not a member yet? <a href="/signup">Sign up now!</a></h3>
     </div>
   );
 };

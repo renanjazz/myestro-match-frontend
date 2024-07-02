@@ -46,13 +46,13 @@ const SignUpPage = () => {
 
 	return (
 		<div>
-			<h1>Sign up!</h1>
+			<h2>Sign up!</h2>
 			<form
 				onSubmit={handleSignUp}
-				className="sign-up-form"
+				className="signup-form"
 			>
 				<label>
-					Email:
+					Email
 					<input
 						type="email"
 						name="email"
@@ -102,7 +102,7 @@ const SignUpPage = () => {
 					/>
 				</label>
 				<label>
-					Experience Level:
+					Experience level:
 					<select
 						name="experience_level"
 						value={experienceLevel}
@@ -124,9 +124,9 @@ const SignUpPage = () => {
 						onChange={(event) => setInstrument(event.target.value)}
 					/>
 				</label>
-				<label>
+				<label className='choose-file'>
 					Profile picture:
-					<input
+					<input className='no-file'
 						name="image"
 						type="file"
 						onChange={(event) => setUserImage(event.target.files[0])}
@@ -136,7 +136,7 @@ const SignUpPage = () => {
 				<button type="submit">Sign Up!</button>
 			</form>
       <br />
-      <h3>Already have an account? <a href="/login">Login!</a></h3>
+      <p className='signup-login-cta'>Already have an account? <a href="/login">Login!</a></p>
 		</div>
 	);
 };
