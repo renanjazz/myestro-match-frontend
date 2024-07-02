@@ -25,6 +25,7 @@ import TeacherDetailsPage from "./pages/TeacherDetailsPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import EditUserPage from "./pages/EditUserPage";
 import EditScheduleReqPage from "./pages/EditScheduleReqPage.jsx";
+import EditBookingReqPage from "./pages/EditBookingReqPage.jsx";
 
 function App() {
   const [profileUser, setProfileUser] = useState(null);
@@ -107,6 +108,7 @@ function App() {
             }
           />
           <Route path="/edit-schedule-date/:id" element={<EditScheduleReqPage formatTime={formatTime}/>} />
+          <Route path="/edit-booking-date/:id" element={<EditBookingReqPage formatTime={formatTime}/>} />
         </Routes>
         <Footer />
       </div>

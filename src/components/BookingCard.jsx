@@ -6,6 +6,18 @@ import { useNavigate } from 'react-router-dom';
 const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingComplete }) => {
 	const nav = useNavigate()
 
+	async function handleDeleteBooking(){
+		try {
+			await axios.delete(`${API_URL}/bookings/api/studio-booking/${booking._id}`)
+			handleBookingDelete(booking._id)
+		} catch (error) {
+			console.error('Error deleting booking:', error);
+		}
+	}
+
+	function handleMoveToUpdate() {
+		nav(`/edit-booking-date/${booking._id}`);
+	}
 	return (
 		<div className="teachers-page">
 			{booking && booking.studio && (
@@ -19,8 +31,8 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 					<p>Status: {booking.status}</p>
 					<br />
 					<div>
-						<button className="teacher-page-button">Cancel Booking</button>
-						<button className="teacher-page-button">Change date</button>
+						<button onClick={handleDeleteBooking} className="teacher-page-button">Cancel Booking</button>
+						<button onClick={handleMoveToUpdate} className="teacher-page-button">Change date</button>
 						<button className="teacher-page-button">Mark as complete</button>
 					</div>
 				</div>
