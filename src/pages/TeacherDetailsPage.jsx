@@ -154,8 +154,10 @@ const TeacherDetailsPage = () => {
                         {formatTime(choosenDay.start_time)} for{" "}
                         {teacherDetails.price_per_session}€/session?
                       </p>
+					  <div className="modal-buttons">
                       <button className="teacher-page-button" onClick={handleBooking}>Confirm</button>
                       <button className="teacher-page-button" onClick={closeModal}>Cancel</button>
+					  </div>
                     </>
                   )}
                 </div>
