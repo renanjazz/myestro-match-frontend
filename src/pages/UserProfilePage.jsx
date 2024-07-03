@@ -13,23 +13,29 @@ const UserProfilePage = ({profileUser}) => {
   }
 
   return (
-    <div>
-      <h1>{profileUser?.username}'s Profile page</h1>
+    <div className="general-page-margin">
+      <h2>{profileUser?.username}'s profile</h2>
+      <div className="image-box">
       <img
         src={profileUser?.userImage}
         alt={profileUser?.username}
-        style={{ height: "250px" }}
+        className="teacher-studio-picture"
       />
-      <h4>Fullname: {profileUser?.fullname}</h4>
-      <h4>Experience level: {profileUser?.experience_level}</h4>
-      <h4>Played instrument: {profileUser?.instrument}</h4>
-      <h4>Member since: {profileUser?.member_since}</h4>
-      <h4>Phone: {profileUser?.phone_number}</h4>
-
-
+      </div>
+      <p><strong>Fullname:</strong> {profileUser?.fullname}</p>
       <br />
-      <button onClick={editProfile}>Edit Profile</button>
+      <p><strong>Experience level:</strong> {profileUser?.experience_level}</p>
+      <br />
 
+      <p><strong>Played instrument:</strong> {profileUser?.instrument}</p>
+      <br />
+      <p><strong>Member since:</strong> {profileUser?.member_since}</p>
+      <br />
+      <p><strong>Phone:</strong> {profileUser?.phone_number}</p>
+      <br />
+      <div className="book-back-box">
+      <button className="book-back-button" onClick={editProfile}>Edit Profile</button>
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react'
 const CompletedBookingCard = ({ formatTime, booking }) => {
   const {studio} = booking
 	return (
-		<div className="teachers-page">
+		<div className="teacher-studio-card">
 			{booking && studio && (
 				<div className="teacher-card">
 					<p>
@@ -11,10 +11,7 @@ const CompletedBookingCard = ({ formatTime, booking }) => {
 						{studio.address}, every {booking.day_of_week} at{' '}
 						{formatTime(booking.start_time)}
 					</p>
-
-					<p>Status: {booking.status}</p>
-					<br />
-					
+					<p>Status: {booking.status}</p>					
 				</div>
 			)}
 		</div>

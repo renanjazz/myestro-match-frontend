@@ -98,19 +98,25 @@ const TeacherDetailsPage = ({formatTime}) => {
 		</div>
         <h3>{teacherDetails.rating}</h3>
         <h3 className="about-me">About me:</h3>
+		<br/>
         <p className="teacher-studio-details-text">{teacherDetails.description}</p>
+		<br/>
         <p className="teacher-studio-details-text">
           <strong>Email:</strong> {teacherDetails.email}
         </p>
+		<br/>
         <p className="teacher-studio-details-text">
           <strong>Instrument:</strong> {teacherDetails.instrument}
         </p>
+		<br/>
         <p className="teacher-studio-details-text">
           <strong>Price/hour:</strong> {teacherDetails.price_per_session}€
         </p>
+		<br/>
         <p className="teacher-studio-details-text">
           <strong>Attendance type:</strong> {teacherDetails.attendance_type}
         </p>
+		<br/>
         <h3>Available dates: (weekly)</h3>
         <div className="available-dates">
           {availability.length > 0 ? (

@@ -15,7 +15,6 @@ const CompletedClassCard = ({ schedule, formatTime }) => {
               <p key={index}>Attendance type: {atteType}</p>
             ))}
           <p>Status: {schedule.status}</p>
-          <br />
         </div>
       )}
     </div>

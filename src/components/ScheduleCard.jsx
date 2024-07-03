@@ -52,7 +52,6 @@ const ScheduleCard = ({
 							<p key={index}>Attendance type: {atteType}</p>
 						))}
 					<p>Status: {schedule.status}</p>
-					<br />
 					<div>
 						<button
 							className="schedule-page-button"
