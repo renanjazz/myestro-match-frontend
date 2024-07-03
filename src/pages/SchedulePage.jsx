@@ -142,8 +142,6 @@ const SchedulePage = ({ formatTime }) => {
 						formatTime={formatTime}
 					/>
 				))}
-
-				<button className="teacher-page-button">See Favourites</button>
 			</div>
 		</>
 	);

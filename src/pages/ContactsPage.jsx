@@ -25,7 +25,7 @@ const ContactsPage = () => {
 				</section>
 				<section>
 					<h3>Renan Castro</h3>
-					<a href="">
+					<a href="https://www.linkedin.com/in/renanjazz/">
 						<p className='li-github-link'>Linkedin</p>
 					</a>
 					<a href="https://github.com/renanjazz">
@@ -35,7 +35,7 @@ const ContactsPage = () => {
 				<section>
 					{' '}
 					<h3>Jonathan Hingorani</h3>
-					<a href="">
+					<a href="https://www.linkedin.com/in/jonathanhingorani/">
 						<p className='li-github-link'>Linkedin</p>
 					</a>
 					<a href="https://github.com/jonathanhingorani">

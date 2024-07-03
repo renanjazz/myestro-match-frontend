@@ -1,4 +1,5 @@
 import React from 'react'
+import RatingCard from "./RatingCard";
 
 const CompletedBookingCard = ({ formatTime, booking }) => {
   const {studio} = booking
@@ -14,7 +15,7 @@ const CompletedBookingCard = ({ formatTime, booking }) => {
 
 					<p>Status: {booking.status}</p>
 					<br />
-					
+					<RatingCard entity={studio} type="studio"/>
 				</div>
 			)}
 		</div>

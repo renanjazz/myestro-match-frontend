@@ -1,4 +1,5 @@
 import React from "react";
+import RatingCard from "./RatingCard";
 
 const CompletedClassCard = ({ schedule, formatTime }) => {
   const {teacher} = schedule
@@ -16,6 +17,7 @@ const CompletedClassCard = ({ schedule, formatTime }) => {
             ))}
           <p>Status: {schedule.status}</p>
           <br />
+          <RatingCard entity={teacher} type="teacher"/>
         </div>
       )}
     </div>
