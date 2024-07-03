@@ -26,7 +26,7 @@ const ScheduleCard = ({
 		try {
 		  const { data: updatedSchedule } = await axios.patch(
 			`${API_URL}/schedule/api/class-schedule/${schedule._id}`,
-			{ status: "Completed" }
+			{ status: "Archived" }
 		  );
 		  handleComplete(updatedSchedule);
 		} catch (error) {

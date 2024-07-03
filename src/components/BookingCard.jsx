@@ -15,6 +15,18 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 		}
 	}
 
+	const handleCompleteBooking = async () => {
+		try {
+			const { data: updatedBooking } = await axios.patch(
+				`${API_URL}/bookings/api/studio-booking/${booking._id}`,
+				{ status: "Archived" }
+			);
+			handleBookingComplete(updatedBooking);
+		} catch (error) {
+			console.error('Error completing booking:', error);
+		}
+	};
+
 	function handleMoveToUpdate() {
 		nav(`/edit-booking-date/${booking._id}`);
 	}
@@ -33,7 +45,7 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 					<div>
 						<button onClick={handleDeleteBooking} className="teacher-page-button">Cancel Booking</button>
 						<button onClick={handleMoveToUpdate} className="teacher-page-button">Change date</button>
-						<button className="teacher-page-button">Mark as complete</button>
+						<button onClick={handleCompleteBooking} className="teacher-page-button">Mark as complete</button>
 					</div>
 				</div>
 			)}

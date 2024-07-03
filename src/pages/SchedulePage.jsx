@@ -29,7 +29,7 @@ const SchedulePage = ({ formatTime }) => {
 
 				const scheduled = data.filter((item) => item.status === 'Scheduled');
 
-				const completed = data.filter((item) => item.status === 'Completed');
+				const completed = data.filter((item) => item.status === 'Archived');
 				setScheduledClasses(scheduled);
 				setCompletedClasses(completed);
 			} catch (error) {
@@ -55,7 +55,7 @@ const SchedulePage = ({ formatTime }) => {
 
 				const booked = data.filter((item) => item.status === 'Booked');
 
-				const completed = data.filter((item) => item.status === 'Completed');
+				const completed = data.filter((item) => item.status === 'Archived');
 				setScheduledBookings(booked);
 				setCompletedBookings(completed);
 			} catch (error) {
@@ -89,21 +89,18 @@ const SchedulePage = ({ formatTime }) => {
 
 	function handleBookingDelete(id) {
 		setScheduledBookings(
-			scheduledBooking.filter((booking) => {
-				booking._id !== id;
-			})
+			scheduledBooking.filter((booking) => booking._id !== id)
 		);
 	}
 
 	function handleBookingComplete(completedBooking) {
 		setScheduledBookings(
-			scheduledBooking.filter((booking) => {
-				booking._id !== completedBooking._id;
-			})
+			scheduledBooking.filter((booking) => booking._id !== completedBooking._id)
 		);
-		setCompletedBookings((previousbookings) => {
-			[...previousbookings, completedBooking];
-		});
+		setCompletedBookings((previousbookings) => [
+			...previousbookings,
+			completedBooking,
+		]);
 	}
 	return (
 		<>

@@ -60,7 +60,6 @@ const StudiosDetailsPage = ({ formatTime }) => {
       );
       setChosenDay(null);
       setIsModalOpen(false);
-      alert("Booking confirmed!");
       nav("/schedule");
     } catch (error) {
       setError("Error booking the date. Please try again.");

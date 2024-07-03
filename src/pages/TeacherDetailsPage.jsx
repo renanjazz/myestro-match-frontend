@@ -59,7 +59,6 @@ const TeacherDetailsPage = ({formatTime}) => {
       setChoosenDay(null);
       setIsModalOpen(false);
       nav("/schedule");
-      alert("Booking confirmed!");
     } catch (error) {
       setErrora("Error booking the date. Please try again.");
       alert("Error booking the date. Please try again.");
