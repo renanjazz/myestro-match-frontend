@@ -107,10 +107,10 @@ const SchedulePage = ({ formatTime }) => {
 	}
 	return (
 		<>
-			<div>
+			<div className='general-page-margin'>
 				<h2>My Schedule</h2>
 
-				<h3>Upcoming {scheduledClasses.length + scheduledBooking.length} </h3>
+				<h3 className='schedule-subheaders'>Ongoing: {scheduledClasses.length + scheduledBooking.length} fixture(s)</h3>
 				{scheduledClasses.map((schedule) => (
 					<ScheduleCard
 						key={schedule._id}
@@ -130,7 +130,7 @@ const SchedulePage = ({ formatTime }) => {
 					/>
 				))}
 
-				<h3>Completed {completedClasses.length + completedBooking.length}</h3>
+				<h3 className='schedule-subheaders'>Archived: {completedClasses.length + completedBooking.length} fixture(s)</h3>
 				{completedClasses.map((schedule) => (
 					<CompletedClassCard
 						key={schedule._id}

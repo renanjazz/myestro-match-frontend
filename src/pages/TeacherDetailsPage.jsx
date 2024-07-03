@@ -112,7 +112,7 @@ const TeacherDetailsPage = ({formatTime}) => {
         <p className="teacher-studio-details-text">
           <strong>Attendance type:</strong> {teacherDetails.attendance_type}
         </p>
-        <h3>Available dates:</h3>
+        <h3>Available dates: (weekly)</h3>
         <div className="available-dates">
           {availability.length > 0 ? (
             availability
@@ -140,7 +140,7 @@ const TeacherDetailsPage = ({formatTime}) => {
                   {choosenDay && (
                     <>
                       <p>
-                        Do you want to book a session with <strong>{teacherDetails.fullname} </strong> on{" "}
+                        Do you want to book sessions with <strong>{teacherDetails.fullname} </strong> every{" "}
                         {choosenDay.day_of_week} at{" "}
                         {formatTime(choosenDay.start_time)} for{" "}
                         {teacherDetails.price_per_session}€/session?

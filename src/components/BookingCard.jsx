@@ -19,9 +19,9 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 		nav(`/edit-booking-date/${booking._id}`);
 	}
 	return (
-		<div className="teachers-page">
+		<div>
 			{booking && booking.studio && (
-				<div className="teacher-card">
+				<div className="teacher-studio-card">
 					<p>
 						<strong>{booking.studio.studio_name}</strong>, at{' '}
 						{booking.studio.address}, every {booking.day_of_week} at{' '}
@@ -31,9 +31,9 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 					<p>Status: {booking.status}</p>
 					<br />
 					<div>
-						<button onClick={handleDeleteBooking} className="teacher-page-button">Cancel Booking</button>
-						<button onClick={handleMoveToUpdate} className="teacher-page-button">Change date</button>
-						<button className="teacher-page-button">Mark as complete</button>
+						<button onClick={handleDeleteBooking} className="schedule-page-button">Cancel</button>
+						<button onClick={handleMoveToUpdate} className="schedule-page-button">Change time</button>
+						<button className="schedule-page-button">Mark as complete</button>
 					</div>
 				</div>
 			)}
