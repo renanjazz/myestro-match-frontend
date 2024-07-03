@@ -15,6 +15,11 @@ const Footer = () => {
             Contact us
           </NavLink>
         </div>
+        <div>
+          <NavLink to="/terms-of-service" className="footer-text">
+            Terms of service
+          </NavLink>
+        </div>
       </div>
       <div className="footer-drj-product">
         <p>
