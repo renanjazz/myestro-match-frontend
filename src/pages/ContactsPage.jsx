@@ -2,43 +2,44 @@ import React from 'react';
 
 const ContactsPage = () => {
 	return (
-		<div>
-			<h1>How to contact us</h1>
-			<h3>You can check our repositories in the following links:</h3>
+		<div className='contact-page-margin'>
+			
+			<h2>How to contact us</h2>
+			<h3>Repositories</h3>
 			<a href="https://github.com/renanjazz/myestro-match-frontend">
-				<p>Myestro Front-end</p>
+				<p className='li-github-link'>Myestro Front-end</p>
 			</a>
 			<a href="https://github.com/Dani-A-Dias/myestro-match-backend">
-				<p>Myestro Back-end</p>
+				<p className='li-github-link'>Myestro Back-end</p>
 			</a>
 			<div>
-      <section>
+     	 		<section>
 					{' '}
-					<h2>Daniela Dias</h2>
+					<h3>Daniela Dias</h3>
 					<a href="https://www.linkedin.com/in/daniela-dias-604926243/">
-						<p>Linkedin</p>
+						<p className='li-github-link'>Linkedin</p>
 					</a>
 					<a href="https://github.com/Dani-A-Dias">
-						<p>Github</p>
+						<p className='li-github-link'>Github</p>
 					</a>
 				</section>
 				<section>
-					<h2>Renan Castro</h2>
+					<h3>Renan Castro</h3>
 					<a href="">
-						<p>Linkedin</p>
+						<p className='li-github-link'>Linkedin</p>
 					</a>
 					<a href="https://github.com/renanjazz">
-						<p>Github</p>
+						<p className='li-github-link'>Github</p>
 					</a>
 				</section>
 				<section>
 					{' '}
-					<h2>Jonathan Hingorani</h2>
+					<h3>Jonathan Hingorani</h3>
 					<a href="">
-						<p>Linkedin</p>
+						<p className='li-github-link'>Linkedin</p>
 					</a>
 					<a href="https://github.com/jonathanhingorani">
-						<p>Github</p>
+						<p className='li-github-link'>Github</p>
 					</a>
 				</section>
 

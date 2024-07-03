@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from "../../config";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import { useNavigate } from "react-router-dom";
 
@@ -89,41 +89,42 @@ const StudiosDetailsPage = ({ formatTime }) => {
   };
   return (
     <>
-      <div className="studios-details">
+      <div className="teacher-studio-details">
         <h2>{studioDetails.studio_name}</h2>
-        <img src={studioDetails.picture} alt={studioDetails.studio_name} />
-        <h4>Address: {studioDetails.address}</h4>
-        <h5>Description: {studioDetails.description}</h5>
-        <h5>Rating: {studioDetails.rating}</h5>
-        <h5>Email: {studioDetails.contact_email} </h5>
-        <h5>Phone: {studioDetails.contact_phone}</h5>
-        <h4>Price per session: {studioDetails.rental_price}</h4>
-        <h3>Available dates:</h3>
-        <div>
+        <div className="image-box">
+        <img className="teacher-studio-picture"
+          src={studioDetails.picture} 
+          alt={studioDetails.studio_name} />
+        </div>
+        <p className="teacher-studio-details-text"><strong>Address:</strong> {studioDetails.address}</p>
+        <p className="teacher-studio-details-text"><strong>Description:</strong> {studioDetails.description}</p>
+        <p className="teacher-studio-details-text"><strong>Rating:</strong> {studioDetails.rating}</p>
+        <p className="teacher-studio-details-text"><strong>Email:</strong> {studioDetails.contact_email} </p>
+        <p className="teacher-studio-details-text"><strong>Phone:</strong> {studioDetails.contact_phone}</p>
+        <p className="teacher-studio-details-text"><strong>Price per session:</strong> {studioDetails.rental_price}</p>
+        <p className="teacher-studio-details-text"><strong>Available dates:</strong></p>
+        <div className="available-dates">
           {slots.length > 0 ? (
             slots
               .filter((date) => !date.reserved)
               .map((date) => (
                 <div key={date._id}>
-                  <button onClick={() => setChosenDay(date)}>
+                  <button className="available-dates-button" onClick={() => setChosenDay(date)}>
                     {date.day_of_week} - {formatTime(date.start_time)}
                   </button>
                 </div>
               ))
           ) : (
-            <p>No available dates</p>
+            <p className="error-message">No available dates</p>
           )}
         </div>
         {chosenDay && (
           <div>
-            <h4>Chosen date:</h4>
-            <p>
-              {chosenDay.day_of_week} - {formatTime(chosenDay.start_time)}
-            </p>
+
             {isModalOpen && (
               <div className="modal-overlay">
                 <div className="modal">
-                  <h2>Confirm Booking</h2>
+                  <h2>Confirm booking</h2>
                   {chosenDay && (
                     <>
                       <p>
@@ -131,8 +132,10 @@ const StudiosDetailsPage = ({ formatTime }) => {
                         at {formatTime(chosenDay.start_time)} for{" "}
                         {studioDetails.rental_price}€/session?
                       </p>
-                      <button onClick={handleBooking}>Confirm</button>
-                      <button onClick={closeModal}>Cancel</button>
+                      <div className="modal-buttons">
+                      <button className="modal-button" onClick={handleBooking}>Confirm</button>
+                      <button className="modal-button" onClick={closeModal}>Cancel</button>
+                      </div>
                     </>
                   )}
                 </div>
@@ -141,10 +144,17 @@ const StudiosDetailsPage = ({ formatTime }) => {
           </div>
         )}
         <br />
+        <div className="book-back-box">
+        <button className="book-back-button" onClick={openModal}>Book session</button>
+        <br />
+        <Link to={"/studios"}>
+        <button className="book-back-button">
+          Back
+        </button>
+        </Link>
+        </div>
+        <br />
 
-        <br />
-        <button onClick={openModal}>Book session</button>
-        <br />
         <div>{error && <p className="error-message">{error}</p>}</div>
 
         <br />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TeacherCard = ({ teacher }) => {
   return (
     <>
-      <div className="teacher-card">
+      <div className="teacher-studio-card">
         <h3>{teacher.fullname}</h3>
         <p>
           Instrument: {teacher.instrument}
@@ -20,5 +20,3 @@ const TeacherCard = ({ teacher }) => {
 };
 
 export default TeacherCard;
-
-// where is the teacher picture? <<<<<<<<<<<<<<<<<<<

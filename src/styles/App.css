@@ -249,13 +249,13 @@ h4 {
     text-align: center;
 }
 
-.teachers-page{
+.teacher-studio-page{
     display: flex;
     flex-direction: column;
     margin: 10px;
 }
 
-.teacher-card{
+.teacher-studio-card{
     display: flex;
     background-color:rgb(255, 255, 255, 0.25);
     margin-bottom: 10px;
@@ -264,7 +264,8 @@ h4 {
     border-radius: 10px;
     flex-direction: column;
     padding: 10px;
-    line-height: 0;
+	flex-wrap: wrap;
+	line-height: 0px;
 }
 
 h3 {
@@ -289,7 +290,7 @@ p {
 	font-size: 1rem;
 }
 
-.teacher-details-text {
+.teacher-studio-details-text {
     font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
     font-weight: lighter;
@@ -353,10 +354,11 @@ p {
 	border-radius: 8px;
 	max-width: 500px;
 	width: 100%;
+	margin: 10px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.teacher-details {
+.teacher-studio-details {
 	display: flex;
 	flex-direction: column;
 	margin: 10px;
@@ -374,7 +376,7 @@ p {
     font-size: 0.9rem;
     background-color: #F0F0F0;
     border: 2px solid;
-    border-color: #101010;
+    border-color: #F0F0F0;
     border-radius: 10px;
     cursor: pointer;
     padding: 10px;
@@ -472,3 +474,132 @@ input::file-selector-button {
 	margin-bottom: -30px;
 }
 
+.modal-buttons{
+	display: flex;
+	justify-content: center;
+}
+
+.modal-button{
+	color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #F0F0F0;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+	margin: 5px;
+}
+
+
+.modal-button:hover{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+	margin: 5px;
+
+}
+
+.modal-button.selected{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.book-back-box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.book-back-button{
+    color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #F0F0F0;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+	width: 240px;
+}
+
+.book-back-button:hover{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.book-back-button.selected{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.general-page-margin{
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+	font-family: "neue-haas-grotesk-text", sans-serif;
+	color: #101010;
+}
+
+.contact-page-margin{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	margin: 10px;
+	font-family: "neue-haas-grotesk-text", sans-serif;
+	color: #101010;
+	text-align: center;
+}
+
+.notfound {
+	display: flex;
+	margin: auto;
+	flex-direction: column;
+
+}
+
+.not-found-image{
+	width: 80vw;
+	margin-bottom: 30px;
+}
+
+.li-github-link{
+	font-style: italic;
+}
+
+.li-github-link:hover{
+	font-style: italic;
+	text-decoration: underline;
+}

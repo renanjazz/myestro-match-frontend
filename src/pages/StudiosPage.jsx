@@ -23,9 +23,9 @@ const StudiosPage = () => {
 
   return (
     <>
-      <div>
+      <div className="teacher-studio-page">
         <h2>Studios</h2>
-        <h4>{studios.length} Studios found</h4>
+        <h4>{studios.length} studios found</h4>
         {studios.map((studio) => (
           <StudioCard key={studio._id} studio={studio} />
         ))}

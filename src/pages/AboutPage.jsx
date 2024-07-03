@@ -8,8 +8,8 @@ const AboutPage = () => {
 		nav('/');
 	}
 	return (
-		<div>
-			<h1>DRJ Industries: A Legacy of Innovation and Inspiration</h1>
+		<div className='general-page-margin'>
+			<h2>DRJ Industries: A Legacy of Innovation and Inspiration</h2>
 			<section>
 				<p className="p-indent">
 					Founded on July 29, 1954, DRJ Industries has been a beacon of
@@ -70,8 +70,12 @@ const AboutPage = () => {
 				</p>
 			</section>
 			<br />
+			<div className="book-back-box">
+			<button className="book-back-button" onClick={handleBackButton}>Back</button>
+			</div>
 			<br />
-			<button onClick={handleBackButton}>Back</button>
+
+
 		</div>
 	);
 };

@@ -4,16 +4,14 @@ import { Link } from "react-router-dom";
 const StudioCard = ({ studio }) => {
   return (
     <>
-      <div className="studio-card">
-        <h2>{studio.studio_name}</h2>
-        <h5>
-          Address:
-          {studio.address}
-        </h5>
-        <p>Description: {studio.description}</p>
-        <h5>Rating: {studio.rating}</h5>
+      <div className="teacher-studio-card">
+        <h3>{studio.studio_name}</h3>
+        <p>
+          Address: {studio.address}
+        </p>
+        <p>Rating: {studio.rating}</p>
         <Link to={`/studios/${studio._id}`}>
-          <button>Know more</button>
+          <button className="teacher-page-button">Know more</button>
         </Link>
       </div>
     </>
