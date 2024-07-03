@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config.js';
 import { AuthContext } from '../context/auth.context.jsx';
 import uploadimg from '../assets/upload-profile-pic.png';
@@ -128,6 +128,10 @@ const EditUserPage = ({ profileUser, setProfileUser }) => {
 				<br/>
         <div className='book-back-box'>
         <button className='book-back-button' type="submit">Update profile</button>
+        <br/>
+        <Link to={"/profile"}>
+        <button className='book-back-button'>Cancel</button>
+        </Link>
         </div>
       </form>
       <br />
