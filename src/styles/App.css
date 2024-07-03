@@ -594,3 +594,12 @@ input::file-selector-button {
 	width: 80vw;
 	margin-bottom: 30px;
 }
+
+.li-github-link{
+	font-style: italic;
+}
+
+.li-github-link:hover{
+	font-style: italic;
+	text-decoration: underline;
+}
