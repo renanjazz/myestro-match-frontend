@@ -39,9 +39,9 @@ const ScheduleCard = ({
 	}
 
 	return (
-		<div className="teachers-page">
+		<div>
 			{schedule && schedule.teacher && (
-				<div className="teacher-card">
+				<div className="teacher-studio-card">
 					<p>
 						<strong>{schedule.teacher.fullname}</strong>,{' '}
 						{schedule.teacher.instrument}, every {schedule.day_of_week} at{' '}
@@ -49,28 +49,28 @@ const ScheduleCard = ({
 					</p>
 					{Array.isArray(schedule.teacher.attendance_type) &&
 						schedule.teacher.attendance_type.map((atteType, index) => (
-							<p key={index}>{atteType}</p>
+							<p key={index}>Attendance type: {atteType}</p>
 						))}
 					<p>Status: {schedule.status}</p>
 					<br />
 					<div>
 						<button
-							className="teacher-page-button"
+							className="schedule-page-button"
 							onClick={handleDeleteSchedule}
 						>
-							Cancel class
+							Cancel
 						</button>
 						<button
-							className="teacher-page-button"
+							className="schedule-page-button"
 							onClick={handleMoveToUpdate}
 						>
 							Change time
 						</button>
 						<button
-							className="teacher-page-button"
+							className="schedule-page-button"
 							onClick={handleCompleteSchedule}
 						>
-							Mark as complete
+							Archive
 						</button>
 					</div>
 				</div>

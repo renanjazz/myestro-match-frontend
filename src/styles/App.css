@@ -608,3 +608,53 @@ input::file-selector-button {
 	width:100%;
 	border-color: rgb(43, 43, 43);
   }
+  
+.schedule-subheaders{
+	text-align: center;
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 1.1rem;
+}
+
+.schedule-page-button{
+    color: #101010;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #F0F0F0;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+	margin-right: 5px;
+	margin-top: 5px
+}
+
+.schedule-page-button:hover{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+    background-color: #101010;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    cursor: pointer;
+	margin-right: 5px;
+	margin-top: 5px
+}
+
+.schedule-page-button.selected{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-right: 5px;
+	margin-top: 5px
+}
