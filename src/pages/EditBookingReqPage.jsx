@@ -70,13 +70,14 @@ const EditBookingReqPage = ({formatTime}) => {
   }
 
   return (
-    <div>
-      <h1>Edit booking date</h1>
-      <h2>Current booking</h2>
+    <div className='teacher-studio-page'>
+      <h2>Change time</h2>
+      <h3>Current selection:</h3>
       <p>
-        {studioDetails.studio_name} - {booking.day_of_week} at {formatTime(booking.start_time)}
+        {booking.studio.studio_name} - {booking.day_of_week} at {formatTime(booking.start_time)}
       </p>
-      <h3>Available Dates</h3>
+      <br/>
+      <h3>Available times:</h3>
       <div className="available-dates">
         {slots?.length > 0 ? (
           slots
@@ -96,10 +97,13 @@ const EditBookingReqPage = ({formatTime}) => {
         )}
       </div>
       <br />
-      <button className="teacher-page-button" onClick={handleUpdatebooking}>
+      <div className='book-back-box'>
+      <button className="book-back-button" onClick={handleUpdatebooking}>
         Update booking
       </button>
-      <button className="teacher-page-button" onClick={handleCancel}>Cancel</button>
+      <br/>
+      <button className="book-back-button" onClick={handleCancel}>Cancel</button>
+      </div>
       {error && <p className="error-message">{error}</p>}
     </div>
   );

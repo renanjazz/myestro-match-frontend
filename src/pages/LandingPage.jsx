@@ -24,10 +24,10 @@ if(currUser){
           Find the perfect music teacher or studio for your needs! Simply follow the links below to begin exploring from the finest selection in Middle-earth.
         </h4>
         <Link to="/teacher">
-          <button className="landing-page-button">Find me a Teacher</button>
+          <button className="landing-page-button">Find me a teacher</button>
         </Link>
         <Link to="/studios">
-          <button className="landing-page-button">Find me a Studio</button>
+          <button className="landing-page-button">Find me a studio</button>
         </Link>
       </div>
     </>

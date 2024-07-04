@@ -9,7 +9,7 @@ const TermsOfServicePage = () => {
 	}
 	return (
 		<div className='general-page-margin'>
-			<h1>DRJ Industries Terms of Service</h1>
+			<h2>DRJ Industries Terms of Service</h2>
 			<h3>Effective Date: 03 of July of 2024</h3>
 			<p>
 				Welcome to DRJ Industries. By accessing or using our services, you agree
@@ -170,6 +170,8 @@ const TermsOfServicePage = () => {
 			<button className="book-back-button" onClick={handleBackButton}>Back</button>
 			</div>
 			<br />
+			<br/>
+
 		</div>
 	);
 };

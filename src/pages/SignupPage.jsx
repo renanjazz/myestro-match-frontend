@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config.js';
 import { AuthContext } from '../context/auth.context.jsx';
+import uploadimg from '../assets/upload-profile-pic.png';
 
 const SignUpPage = () => {
 	const [fullname, setFullname] = useState('');
@@ -46,76 +47,70 @@ const SignUpPage = () => {
 
 	return (
 		<div>
-			<h2>Sign up!</h2>
+			<h2>Sign up</h2>
 			<form
 				onSubmit={handleSignUp}
 				className="signup-form"
 			>
 				<label>
-					Email
 					<input
 						type="email"
 						name="email"
 						value={email}
-						placeholder="gollum.sucks@lotr.com"
+						placeholder="Email"
 						onChange={(event) => setEmail(event.target.value)}
 					/>
 				</label>
 				<label>
-					Username:
 					<input
 						name="username"
 						type="text"
 						value={username}
-						placeholder="BetterThanGollum"
+						placeholder="Username"
 						onChange={(event) => setUsername(event.target.value)}
 					/>
 				</label>
 				<label>
-					Fullname:
 					<input
 						name="fullname"
 						type="text"
 						value={fullname}
-						placeholder="Smeagol"
+						placeholder="Fullname"
 						onChange={(event) => setFullname(event.target.value)}
 					/>
 				</label>
 				<label>
-					Password:
 					<input
 						name="password"
 						type="password"
 						value={password}
-						placeholder="*******"
+						placeholder="Password"
 						onChange={(event) => setPassword(event.target.value)}
 					/>
 				</label>
 				<label>
-					Phone Number:
 					<input
 						name="phone_number"
 						type="text"
 						value={phoneNumber}
-						placeholder="123-456-7890"
+						placeholder="Phone number"
 						onChange={(event) => setPhoneNumber(event.target.value)}
 					/>
 				</label>
 				<label>
-					Experience level:
 					<select
+						className='drop-down'
 						name="experience_level"
 						value={experienceLevel}
 						onChange={(event) => setExperienceLevel(event.target.value)}
 					>
-						<option value="">Select</option>
+						<option value="">-Experience level-</option>
 						<option value="Beginner">Beginner</option>
 						<option value="Intermediate">Intermediate</option>
 						<option value="Advanced">Advanced</option>
 					</select>
 				</label>
 				<label>
-					Instrument:
 					<input
 						name="instrument"
 						type="text"
@@ -125,7 +120,10 @@ const SignUpPage = () => {
 					/>
 				</label>
 				<label className='choose-file'>
-					Profile picture:
+					<div className='image-upload-box'>
+					<p className='image-upload-text'>Upload profile picture</p>
+					<img src={uploadimg} alt="upload profile pic" className="image-upload"/>
+					</div>
 					<input className='no-file'
 						name="image"
 						type="file"
@@ -133,11 +131,20 @@ const SignUpPage = () => {
 					/>
 				</label>
 				{error && <p className="error-message">{error}</p>}
-				<button type="submit">Sign Up!</button>
+				<br/>
+				<br/>
+				<div className='book-back-box'>
+				<button className='book-back-button' type="submit">Submit</button>
+				</div>
 			</form>
       <br />
       <p className='signup-login-cta'>Already have an account? <a href="/login">Login!</a></p>
+	  <br/>
+	  <br/>
+	  <br/>
+
 		</div>
+		
 	);
 };
 

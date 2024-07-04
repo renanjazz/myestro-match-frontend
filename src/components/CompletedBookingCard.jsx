@@ -3,7 +3,7 @@ import RatingStudiosCard from './RatingStudiosCard';
 const CompletedBookingCard = ({ formatTime, booking }) => {
 	const { studio } = booking;
 	return (
-		<div className="teachers-page">
+		<div className="teacher-studio-card">
 			{booking && studio && (
 				<div className="teacher-card">
 					<p>

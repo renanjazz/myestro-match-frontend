@@ -41,7 +41,6 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 					</p>
 
 					<p>Status: {booking.status}</p>
-					<br />
 					<div>
 						<button onClick={handleDeleteBooking} className="schedule-page-button">Cancel</button>
 						<button onClick={handleMoveToUpdate} className="schedule-page-button">Change time</button>

@@ -62,10 +62,11 @@ html {
 	height: 100%;
 	text-align: right;
 	padding-right: 10px;
-	margin-top: 30px;
+	margin-top: 60px;
 }
 .footer-drj-product p{
 	color: #b9b9b9;
+	font-size: 0.85rem;
 }
 
 .footer-text {
@@ -146,8 +147,9 @@ body {
 }
 
 .user-icon {
-	height: 23px;
-	padding-left: 10px;
+	height: 33px;
+	width: 33px;
+	margin-left: 10px;
 	border-radius: 50%;
 }
 
@@ -158,12 +160,15 @@ body {
 
 .close-icon {
 	width: 20px;
-	padding-right: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .hamburger-icon {
 	width: 20px;
-	padding-right: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+
 }
 
 button {
@@ -186,12 +191,15 @@ button {
 	font-weight: lighter;
 	font-size: 0.9rem;
 	width: 90vw;
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 .landingpage-logo {
 	width: 180px;
 	max-width: 2000px;
-	margin-top: 45px;
+	margin-top: 120px;
+	margin-bottom: 20px;
 }
 
 .landing-page-button {
@@ -206,6 +214,7 @@ button {
 	cursor: pointer;
 	padding: 10px;
 	margin: 5px;
+	width: 250px;
 }
 
 .landing-page-button:hover {
@@ -218,6 +227,8 @@ button {
 	border-color: #101010;
 	border-radius: 10px;
 	cursor: pointer;
+	width: 250px;
+
 }
 
 .landing-page-button.selected {
@@ -230,6 +241,8 @@ button {
     border-color: #101010;
     border-radius: 10px;
     cursor: pointer;
+	width: 250px;
+
 }
 
 h2 {
@@ -247,6 +260,7 @@ h4 {
     font-style: italic;
     font-size: 0.85rem;
     text-align: center;
+	margin-top: 0px;
 }
 
 .teacher-studio-page{
@@ -265,7 +279,6 @@ h4 {
     flex-direction: column;
     padding: 10px;
 	flex-wrap: wrap;
-	line-height: 0px;
 }
 
 h3 {
@@ -273,6 +286,7 @@ h3 {
 	color: #101010;
     font-weight: bold;
     font-size: 1rem;
+	margin-top: 0px;
 }
 
 .about-me {
@@ -281,13 +295,7 @@ h3 {
     font-weight: bold;
     font-size: 1rem;
 	margin-bottom: 0px;
-}
-
-p {
-    font-family: 'neue-haas-grotesk-text', sans-serif;
-	color: #101010;
-    font-weight: lighter;
-	font-size: 1rem;
+	margin-top: 0px;
 }
 
 .teacher-studio-details-text {
@@ -309,6 +317,7 @@ p {
     border-radius: 10px;
     cursor: pointer;
     padding: 10px;
+	margin-top: 8px;
 }
 
 .teacher-page-button:hover{
@@ -321,6 +330,8 @@ p {
     border-color: #101010;
     border-radius: 10px;
     cursor: pointer;
+	margin-top: 8px;
+
 }
 
 .teacher-page-button.selected{
@@ -333,6 +344,7 @@ p {
 	border-color: #101010;
 	border-radius: 10px;
 	cursor: pointer;
+	margin-top: 8px;
 }
 
 /*Fake modal, made with html and css(it's just a box with options)*/
@@ -434,10 +446,16 @@ a {
 .signup-form {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: column;
 	margin: 10px;
 	font-family: "neue-haas-grotesk-text", sans-serif;
 	font-size: 0.9rem;
 	align-items: center;
+}
+
+.detail-entry-form {
+	display: flex;
+	flex-direction: column;
 }
 
 select {
@@ -452,17 +470,39 @@ select {
 }
 
 input::file-selector-button {
-	font-weight: bold;
-	color: rgb(43, 43, 43);
-	padding: 0.5em;
-	border: solid #F0F0F0;
-	align-items: center;
-	vertical-align: middle;
+	font-weight: light;
+	color: #f0f0f0;
+	border: solid #f0f0f0;
+	background-color: #272727;
+	border-radius: 8px;
+	margin-right: 5px;
+	height: 25px;
 }
 
 .image-box{
 	display: flex;
 	justify-content: center;
+}
+
+.image-upload-box {
+	background-color: #F0F0F0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 5px;
+}
+
+.image-upload {
+	width: 70px;
+	margin-top: 10px;
+}
+
+p.image-upload-text {
+	color: rgb(117, 117, 117);
+	font-size: 0.9rem;
 }
 
 .teacher-studio-picture{
@@ -471,7 +511,7 @@ input::file-selector-button {
 	border-radius: 50%;
 	border: solid 2px #101010;
 	margin-top: -10px;
-	margin-bottom: -30px;
+	margin-bottom: 20px;
 }
 
 .modal-buttons{
@@ -565,6 +605,19 @@ input::file-selector-button {
 	cursor: pointer;
 }
 
+.drop-down{
+	height: 30px;
+}
+
+input {
+	color: #272727;
+	padding-left: 3px;
+}
+
+select {
+	color: #101010;
+}
+
 .general-page-margin{
 	display: flex;
 	flex-direction: column;
@@ -609,11 +662,19 @@ input::file-selector-button {
 	border-color: rgb(43, 43, 43);
   }
   
-.schedule-subheaders{
+.ongoing-subheader{
 	text-align: center;
 	font-style: italic;
 	font-weight: lighter;
 	font-size: 1.1rem;
+}
+
+.archived-subheader {
+	text-align: center;
+	font-style: italic;
+	font-weight: lighter;
+	font-size: 1.1rem;
+	margin-top: 30px;
 }
 
 .schedule-page-button{
@@ -657,4 +718,13 @@ input::file-selector-button {
 	cursor: pointer;
 	margin-right: 5px;
 	margin-top: 5px
+}
+
+p {
+    font-family: 'neue-haas-grotesk-text', sans-serif;
+	color: #101010;
+    font-weight: lighter;
+	font-size: 1rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }

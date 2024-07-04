@@ -70,13 +70,14 @@ const EditScheduleReqPage = ({formatTime}) => {
   }
 
   return (
-    <div>
-      <h1>Edit Schedule Date</h1>
-      <h2>Current Schedule</h2>
+    <div className='teacher-studio-page'>
+      <h2>Change time</h2>
+      <h3>Current selection:</h3>
       <p>
         {schedule.teacher.fullname} - {schedule.day_of_week} at {formatTime(schedule.start_time)}
       </p>
-      <h3>Available Dates</h3>
+      <br/>
+      <h3>Available times:</h3>
       <div className="available-dates">
         {availability.length > 0 ? (
           availability
@@ -96,10 +97,13 @@ const EditScheduleReqPage = ({formatTime}) => {
         )}
       </div>
       <br />
-      <button className="teacher-page-button" onClick={handleUpdateSchedule}>
-        Update Schedule
+      <div className='book-back-box'>
+      <button className="book-back-button" onClick={handleUpdateSchedule}>
+        Update schedule
       </button>
-      <button className="teacher-page-button" onClick={handleCancel}>Cancel</button>
+      <br/>
+      <button className="book-back-button" onClick={handleCancel}>Cancel</button>
+      </div>
       {error && <p className="error-message">{error}</p>}
     </div>
   );

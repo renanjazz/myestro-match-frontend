@@ -96,12 +96,19 @@ const StudiosDetailsPage = ({ formatTime }) => {
           alt={studioDetails.studio_name} />
         </div>
         <p className="teacher-studio-details-text"><strong>Address:</strong> {studioDetails.address}</p>
+        <br/>
         <p className="teacher-studio-details-text"><strong>Description:</strong> {studioDetails.description}</p>
+        <br/>
         <p className="teacher-studio-details-text"><strong>Rating:</strong> {studioDetails.rating}</p>
+        <br/>
         <p className="teacher-studio-details-text"><strong>Email:</strong> {studioDetails.contact_email} </p>
+        <br/>
         <p className="teacher-studio-details-text"><strong>Phone:</strong> {studioDetails.contact_phone}</p>
+        <br/>
         <p className="teacher-studio-details-text"><strong>Price per session:</strong> {studioDetails.rental_price}</p>
+        <br/>
         <p className="teacher-studio-details-text"><strong>Available dates:</strong></p>
+        <br/>
         <div className="available-dates">
           {slots.length > 0 ? (
             slots
@@ -142,6 +149,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
             )}
           </div>
         )}
+        <br />
         <br />
         <div className="book-back-box">
         <button className="book-back-button" onClick={openModal}>Book session</button>
