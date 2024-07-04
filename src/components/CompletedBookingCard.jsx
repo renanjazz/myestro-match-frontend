@@ -1,6 +1,5 @@
 import React from 'react';
-import RatingTeachersCard from './RatingTeachersCard';
-
+import RatingStudiosCard from './RatingStudiosCard';
 const CompletedBookingCard = ({ formatTime, booking }) => {
 	const { studio } = booking;
 	return (
@@ -14,7 +13,7 @@ const CompletedBookingCard = ({ formatTime, booking }) => {
 
 					<p>Status: {booking.status}</p>
 					<br />
-					
+					<RatingStudiosCard studio={studio}/>
 				</div>
 			)}
 		</div>

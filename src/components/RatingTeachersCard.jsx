@@ -6,6 +6,7 @@ import { API_URL } from '../../config';
 const RatingTeachersCard = ({ teacher }) => {
   const [hasRated, setHasRated] = useState(false);
   const { currUser } = useContext(AuthContext);
+  console.log("this is teacher info", teacher)
 
   useEffect(() => {
     if (teacher.user_already_rated.includes(currUser._id)) {
@@ -15,7 +16,7 @@ const RatingTeachersCard = ({ teacher }) => {
 
   async function handleRating(value) {
     try {
-      await axios.patch(`${API_URL}/ratings/api/${currUser._id}/rate/${teacher._id}`, { rating: value });
+      await axios.patch(`${API_URL}/ratings/api/teachers/${currUser._id}/rate/${teacher._id}`, { rating: value });
       setHasRated(true); 
     } catch (error) {
       console.error('Error rating the teacher:', error);
@@ -28,7 +29,7 @@ const RatingTeachersCard = ({ teacher }) => {
         <p>Thank you for your feedback!</p>
       ) : (
         <div>
-          <p>How would you rate your teacher?</p>
+          <p>How would you rate this teacher?</p>
           <button onClick={() => handleRating('positive')}>🙂</button>
           <button onClick={() => handleRating('negative')}>🙁</button>
         </div>
