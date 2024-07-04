@@ -11,7 +11,7 @@ const SignUpPage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [phoneNumber, setPhoneNumber] = useState('');
-	const [experienceLevel, setExperienceLevel] = useState('');
+	const [experienceLevel, setExperienceLevel] = useState("Beginner");
 	const [instrument, setInstrument] = useState('');
 	const [userImage, setUserImage] = useState(null);
 	const [error, setError] = useState(null);
@@ -104,7 +104,7 @@ const SignUpPage = () => {
 						value={experienceLevel}
 						onChange={(event) => setExperienceLevel(event.target.value)}
 					>
-						<option value="">-Experience level-</option>
+						<option value="Beginner">-Experience level-</option>
 						<option value="Beginner">Beginner</option>
 						<option value="Intermediate">Intermediate</option>
 						<option value="Advanced">Advanced</option>

@@ -1,8 +1,7 @@
 import React from 'react';
 import RatingStudiosCard from './RatingStudiosCard';
 import { NavLink } from 'react-router-dom';
-
-const CompletedBookingCard = ({ formatTime, booking }) => {
+const CompletedBookingCard = ({ formatTime, booking, handleRatingUpdate }) => {
 	const { studio } = booking;
 	return (
 		<div className="teacher-studio-card">
@@ -15,7 +14,7 @@ const CompletedBookingCard = ({ formatTime, booking }) => {
 
 					<p>Status: {booking.status}</p>
 					<br />
-					<RatingStudiosCard studio={studio}/>
+					<RatingStudiosCard studio={studio} handleRatingUpdate={handleRatingUpdate}/>
 				</div>
 			)}
 		</div>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AuthContext } from '../context/auth.context';
 import { API_URL } from '../../config';
 
-const RatingStudiosCard = ({ studio }) => {
+const RatingStudiosCard = ({ studio, handleRatingUpdate }) => {
 	const [hasRated, setHasRated] = useState(false);
 	const { currUser } = useContext(AuthContext);
 
@@ -17,11 +17,12 @@ const RatingStudiosCard = ({ studio }) => {
 
 	async function handleRating(value) {
 		try {
-			await axios.patch(
+			const {data} = await axios.patch(
 				`${API_URL}/ratings/api/studios/${currUser._id}/rate/${studio._id}`,
 				{ rating: value }
 			);
 			setHasRated(true);
+            handleRatingUpdate(data, "studio")
 		} catch (error) {
 			console.error('Error rating the studio:', error);
 		}

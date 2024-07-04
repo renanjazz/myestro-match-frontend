@@ -2,7 +2,7 @@ import React from 'react';
 import RatingTeachersCard from './RatingTeachersCard';
 import { NavLink } from 'react-router-dom';
 
-const CompletedClassCard = ({ schedule, formatTime }) => {
+const CompletedClassCard = ({ schedule, formatTime, handleRatingUpdate }) => {
 	const { teacher } = schedule;
 	return (
 		<div>
@@ -20,11 +20,12 @@ const CompletedClassCard = ({ schedule, formatTime }) => {
 					<br />
 					<RatingTeachersCard
 						teacher={teacher}
-						
+						handleRatingUpdate={handleRatingUpdate}
 					/>
 				</div>
 			)}
 		</div>
 	);
 };
+
 export default CompletedClassCard;

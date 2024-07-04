@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { API_URL } from '../config';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
@@ -10,6 +10,7 @@ const ScheduleCard = ({
 	formatTime,
 	handleComplete,
 }) => {
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const nav = useNavigate();
 
 	const handleDeleteSchedule = async () => {
@@ -38,6 +39,14 @@ const ScheduleCard = ({
 	function handleMoveToUpdate() {
 		nav(`/edit-schedule-date/${schedule._id}`);
 	}
+
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
 
 	return (
 		<div>
@@ -68,10 +77,32 @@ const ScheduleCard = ({
 						</button>
 						<button
 							className="schedule-page-button"
-							onClick={handleCompleteSchedule}
+							onClick={openModal}
 						>
 							Archive
 						</button>
+					</div>
+				</div>
+			)}
+			{/* Modal */}
+			{isModalOpen && (
+				<div  className="modal-overlay">
+					<div className="modal">
+						<p>Do you really want to archive this schedule?</p>
+						<div className="modal-buttons">
+							<button
+								className="modal-button"
+								onClick={handleCompleteSchedule}
+							>
+								Confirm
+							</button>
+							<button
+								className="modal-button"
+								onClick={closeModal}
+							>
+								Cancel
+							</button>
+						</div>
 					</div>
 				</div>
 			)}

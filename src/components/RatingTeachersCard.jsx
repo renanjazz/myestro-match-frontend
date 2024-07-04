@@ -3,25 +3,26 @@ import axios from 'axios';
 import { AuthContext } from '../context/auth.context';
 import { API_URL } from '../../config';
 
-const RatingTeachersCard = ({ teacher }) => {
-  const [hasRated, setHasRated] = useState(false);
-  const { currUser } = useContext(AuthContext);
-  console.log("this is teacher info", teacher)
+const RatingTeachersCard = ({ teacher, handleRatingUpdate }) => {
+	const [hasRated, setHasRated] = useState(false);
+	const { currUser } = useContext(AuthContext);
+	console.log("this is teacher info", teacher);
 
-  useEffect(() => {
-    if (teacher.user_already_rated.includes(currUser._id)) {
-      setHasRated(true);
-    }
-  }, [teacher.user_already_rated, currUser._id]);
+	useEffect(() => {
+		if (teacher.user_already_rated.includes(currUser._id)) {
+			setHasRated(true);
+		}
+	}, [teacher.user_already_rated, currUser._id]);
 
-  async function handleRating(value) {
-    try {
-      await axios.patch(`${API_URL}/ratings/api/teachers/${currUser._id}/rate/${teacher._id}`, { rating: value });
-      setHasRated(true); 
-    } catch (error) {
-      console.error('Error rating the teacher:', error);
-    }
-  }
+	const handleRating = async (value) => {
+		try {
+			const { data } = await axios.patch(`${API_URL}/ratings/api/teachers/${currUser._id}/rate/${teacher._id}`, { rating: value });
+			setHasRated(true); 
+			handleRatingUpdate(data, "teacher");
+		} catch (error) {
+			console.error('Error rating the teacher:', error);
+		}
+	};
 
   return (
     <div>
