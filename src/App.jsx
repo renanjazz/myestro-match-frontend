@@ -3,7 +3,6 @@ import './styles/App.css';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import { API_URL } from './config.js';
-import { useNavigate } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './context/auth.context.jsx';
 // Components

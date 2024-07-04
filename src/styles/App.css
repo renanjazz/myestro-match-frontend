@@ -95,7 +95,7 @@ body {
 	margin-top: 0px;
 	flex-direction: column;
 	background-color: #101010;
-	padding-top: 36px;
+	padding-top: 20px;
 	padding-bottom: 10px;
 	width: 100vw;
 }
@@ -334,7 +334,7 @@ h3 {
 
 }
 
-.teacher-page-button.selected{
+.teacher-page-button.selected {
     color: #F0F0F0;
     font-family: "neue-haas-grotesk-text", sans-serif;
     font-weight: light;
@@ -398,6 +398,18 @@ h3 {
 }
 
 .available-dates-button:focus{
+    color: #F0F0F0;
+    font-family: "neue-haas-grotesk-text", sans-serif;
+    font-weight: light;
+    font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.available-dates-button.selected{
     color: #F0F0F0;
     font-family: "neue-haas-grotesk-text", sans-serif;
     font-weight: light;

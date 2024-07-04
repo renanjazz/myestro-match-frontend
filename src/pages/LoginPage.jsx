@@ -10,10 +10,13 @@ const LoginPage = () => {
   const [error, setError] = useState(null);
 
   const nav = useNavigate();
-  const { storeToken, authUser } = useContext(AuthContext);
+  const { storeToken, authUser, currUser } = useContext(AuthContext);
 
   async function handleLogin(e) {
     e.preventDefault();
+    if(currUser){
+      nav("/")
+    }
     const userInfo = { username, password };
     try {
       const { data } = await axios.post(`${API_URL}/auth/login`, userInfo);
