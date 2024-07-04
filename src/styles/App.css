@@ -35,7 +35,6 @@ html {
 	background-color: #101010;
 	display: flex;
 	justify-content: space-around;
-	
 }
 
 .footer-about-contact {
@@ -64,7 +63,7 @@ html {
 	padding-right: 10px;
 	margin-top: 60px;
 }
-.footer-drj-product p{
+.footer-drj-product p {
 	color: #b9b9b9;
 	font-size: 0.85rem;
 }
@@ -151,6 +150,7 @@ body {
 	width: 33px;
 	margin-left: 10px;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .nav-logo {
@@ -168,7 +168,6 @@ body {
 	width: 20px;
 	margin-right: 10px;
 	margin-left: 10px;
-
 }
 
 button {
@@ -228,117 +227,114 @@ button {
 	border-radius: 10px;
 	cursor: pointer;
 	width: 250px;
-
 }
 
 .landing-page-button.selected {
 	color: #f0f0f0;
 	font-family: 'neue-haas-grotesk-text', sans-serif;
 	font-weight: light;
-    font-size: 0.9rem;
-    background-color: #101010;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
+	font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
 	width: 250px;
-
 }
 
 h2 {
-    font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
-    font-weight: lighter;
-    font-size: 1.8rem;
-    text-align: center;
+	font-weight: lighter;
+	font-size: 1.8rem;
+	text-align: center;
 }
 
 h4 {
-    font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
-    font-weight: lighter;
-    font-style: italic;
-    font-size: 0.85rem;
-    text-align: center;
+	font-weight: lighter;
+	font-style: italic;
+	font-size: 0.85rem;
+	text-align: center;
 	margin-top: 0px;
 }
 
-.teacher-studio-page{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+.teacher-studio-page {
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
 }
 
-.teacher-studio-card{
-    display: flex;
-    background-color:rgb(255, 255, 255, 0.25);
-    margin-bottom: 10px;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    flex-direction: column;
-    padding: 10px;
+.teacher-studio-card {
+	display: flex;
+	background-color: rgb(255, 255, 255, 0.25);
+	margin-bottom: 10px;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	flex-direction: column;
+	padding: 10px;
 	flex-wrap: wrap;
 }
 
 h3 {
-    font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
-    font-weight: bold;
-    font-size: 1rem;
+	font-weight: bold;
+	font-size: 1rem;
 	margin-top: 0px;
 }
 
 .about-me {
 	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
-    font-weight: bold;
-    font-size: 1rem;
+	font-weight: bold;
+	font-size: 1rem;
 	margin-bottom: 0px;
 	margin-top: 0px;
 }
 
 .teacher-studio-details-text {
-    font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
-    font-weight: lighter;
+	font-weight: lighter;
 	font-size: 1rem;
 	margin-bottom: 0px;
 }
 
-.teacher-page-button{
-    color: #101010;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #F0F0F0;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
+.teacher-page-button {
+	color: #101010;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #f0f0f0;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
 	margin-top: 8px;
 }
 
-.teacher-page-button:hover{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #101010;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
+.teacher-page-button:hover {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
 	margin-top: 8px;
-
 }
 
 .teacher-page-button.selected {
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
@@ -376,32 +372,31 @@ h3 {
 	margin: 10px;
 }
 
-.available-dates{
+.available-dates {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.available-dates-button{
-    color: #101010;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #F0F0F0;
-    border: 2px solid;
-    border-color: #F0F0F0;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
+.available-dates-button {
+	color: #101010;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #f0f0f0;
+	border: 2px solid;
+	border-color: #f0f0f0;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
 	margin-bottom: 5px;
 	margin-right: 5px;
-
 }
 
-.available-dates-button:focus{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
+.available-dates-button:focus {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
@@ -409,11 +404,11 @@ h3 {
 	cursor: pointer;
 }
 
-.available-dates-button.selected{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
+.available-dates-button.selected {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
@@ -425,25 +420,25 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: "neue-haas-grotesk-text", sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	font-size: 0.9rem;
 	font-weight: light;
 }
 
 input {
 	border: 2px solid;
-	border-color: #F0F0F0;
+	border-color: #f0f0f0;
 	border-radius: 8px;
 	height: 25px;
 	margin: 5px;
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	font-size: 0.9rem;
 	color: #808080;
 }
 
-.signup-login-cta{
+.signup-login-cta {
 	text-align: center;
-	font-family: "neue-haas-grotesk-text", sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	font-style: italic;
 	font-size: 0.9rem;
 	font-weight: lighter;
@@ -460,7 +455,7 @@ a {
 	flex-wrap: wrap;
 	flex-direction: column;
 	margin: 10px;
-	font-family: "neue-haas-grotesk-text", sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	font-size: 0.9rem;
 	align-items: center;
 }
@@ -472,11 +467,11 @@ a {
 
 select {
 	border: 2px solid;
-	border-color: #F0F0F0;
+	border-color: #f0f0f0;
 	border-radius: 8px;
 	height: 25px;
 	margin: 5px;
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	font-size: 0.9rem;
 	color: #b9b9b9;
 }
@@ -491,13 +486,13 @@ input::file-selector-button {
 	height: 25px;
 }
 
-.image-box{
+.image-box {
 	display: flex;
 	justify-content: center;
 }
 
 .image-upload-box {
-	background-color: #F0F0F0;
+	background-color: #f0f0f0;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -517,55 +512,41 @@ p.image-upload-text {
 	font-size: 0.9rem;
 }
 
-.teacher-studio-picture{
+.teacher-studio-picture {
 	height: 125px;
 	width: 125px;
 	border-radius: 50%;
 	border: solid 2px #101010;
 	margin-top: -10px;
 	margin-bottom: 20px;
+	object-fit: cover;
 }
 
-.modal-buttons{
+.modal-buttons {
 	display: flex;
 	justify-content: center;
 	margin-top: 15px;
 }
 
-.modal-button{
+.modal-button {
 	color: #101010;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #F0F0F0;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #f0f0f0;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
 	margin: 5px;
 }
 
-
-.modal-button:hover{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #101010;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-	margin: 5px;
-
-}
-
-.modal-button.selected{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
+.modal-button:hover {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
@@ -574,43 +555,44 @@ p.image-upload-text {
 	margin: 5px;
 }
 
-.book-back-box{
+.modal-button.selected {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.book-back-box {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.book-back-button{
-    color: #101010;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #F0F0F0;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
+.book-back-button {
+	color: #101010;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #f0f0f0;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
 	width: 240px;
 }
 
-.book-back-button:hover{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #101010;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.book-back-button.selected{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
+.book-back-button:hover {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
@@ -618,7 +600,19 @@ p.image-upload-text {
 	cursor: pointer;
 }
 
-.drop-down{
+.book-back-button.selected {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.drop-down {
 	height: 30px;
 }
 
@@ -631,20 +625,20 @@ select {
 	color: #101010;
 }
 
-.general-page-margin{
+.general-page-margin {
 	display: flex;
 	flex-direction: column;
 	margin: 10px;
-	font-family: "neue-haas-grotesk-text", sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
 }
 
-.contact-page-margin{
+.contact-page-margin {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
 	margin: 10px;
-	font-family: "neue-haas-grotesk-text", sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
 	text-align: center;
 }
@@ -653,29 +647,28 @@ select {
 	display: flex;
 	margin: auto;
 	flex-direction: column;
-
 }
 
-.not-found-image{
+.not-found-image {
 	width: 80vw;
 	margin-bottom: 30px;
 }
 
-.li-github-link{
-	font-style: italic;	
+.li-github-link {
+	font-style: italic;
 }
 
-.li-github-link:hover{
+.li-github-link:hover {
 	font-style: italic;
 	text-decoration: underline;
 }
 
-.hr-general{
-	width:100%;
+.hr-general {
+	width: 100%;
 	border-color: rgb(43, 43, 43);
-  }
-  
-.ongoing-subheader{
+}
+
+.ongoing-subheader {
 	text-align: center;
 	font-style: italic;
 	font-weight: lighter;
@@ -690,53 +683,53 @@ select {
 	margin-top: 30px;
 }
 
-.schedule-page-button{
-    color: #101010;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #F0F0F0;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px;
+.schedule-page-button {
+	color: #101010;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #f0f0f0;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px;
 	margin-right: 5px;
-	margin-top: 5px
+	margin-top: 5px;
 }
 
-.schedule-page-button:hover{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
-    background-color: #101010;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    cursor: pointer;
-	margin-right: 5px;
-	margin-top: 5px
-}
-
-.schedule-page-button.selected{
-    color: #F0F0F0;
-    font-family: "neue-haas-grotesk-text", sans-serif;
-    font-weight: light;
-    font-size: 0.9rem;
+.schedule-page-button:hover {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
 	background-color: #101010;
 	border: 2px solid;
 	border-color: #101010;
 	border-radius: 10px;
 	cursor: pointer;
 	margin-right: 5px;
-	margin-top: 5px
+	margin-top: 5px;
+}
+
+.schedule-page-button.selected {
+	color: #f0f0f0;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-weight: light;
+	font-size: 0.9rem;
+	background-color: #101010;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-right: 5px;
+	margin-top: 5px;
 }
 
 p {
-    font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-family: 'neue-haas-grotesk-text', sans-serif;
 	color: #101010;
-    font-weight: lighter;
+	font-weight: lighter;
 	font-size: 1rem;
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -762,24 +755,23 @@ p {
 	padding: 10px;
 }
 
-.rating-button-row{
+.rating-button-row {
 	margin-top: 5px;
 }
 
-.rating-button{
+.rating-button {
 	background-color: #f0f0f0;
 	margin: 5px;
 	border-radius: 10px;
 	cursor: pointer;
-
 }
 
-.rating-button:hover{
+.rating-button:hover {
 	background-color: #c8c8c8;
 	margin: 5px;
 }
 
-.rating-button.selected{
+.rating-button.selected {
 	background-color: #272727;
 	margin: 5px;
 }
@@ -791,13 +783,13 @@ p {
 }
 
 .section-contacts {
-    display: flex;
-    background-color:rgb(255, 255, 255, 0.25);
-    margin-bottom: 10px;
-    border: 2px solid;
-    border-color: #101010;
-    border-radius: 10px;
-    flex-direction: column;
-    padding: 15px;
+	display: flex;
+	background-color: rgb(255, 255, 255, 0.25);
+	margin-bottom: 10px;
+	border: 2px solid;
+	border-color: #101010;
+	border-radius: 10px;
+	flex-direction: column;
+	padding: 15px;
 	flex-wrap: wrap;
 }
