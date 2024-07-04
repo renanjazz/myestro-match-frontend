@@ -10,7 +10,6 @@ const TeacherCard = ({ teacher }) => {
           Instrument: {teacher.instrument}
         </p>
         <p>Presence: {teacher.attendance_type}</p>
-        <p>Rating: {teacher.rating}</p>
         <Link to={`/teacher/${teacher._id}`}>
           <button className="teacher-page-button">Know more</button>
         </Link>

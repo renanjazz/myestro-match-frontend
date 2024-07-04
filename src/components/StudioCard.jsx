@@ -9,7 +9,6 @@ const StudioCard = ({ studio }) => {
         <p>
           Address: {studio.address}
         </p>
-        <p>Rating: {studio.rating}</p>
         <Link to={`/studios/${studio._id}`}>
           <button className="teacher-page-button">Know more</button>
         </Link>
