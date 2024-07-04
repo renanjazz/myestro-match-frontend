@@ -28,10 +28,12 @@ const RatingTeachersCard = ({ teacher }) => {
       {hasRated ? (
         <p>Thank you for your feedback!</p>
       ) : (
-        <div>
+        <div className='rating-box'>
           <p>How would you rate this teacher?</p>
-          <button onClick={() => handleRating('positive')}>🙂</button>
-          <button onClick={() => handleRating('negative')}>🙁</button>
+          <div className='rating-button-row'>
+          <button className='rating-button' onClick={() => handleRating('positive')}>🙂</button>
+          <button className='rating-button' onClick={() => handleRating('negative')}>🙁</button>
+          </div>
         </div>
       )}
     </div>

@@ -517,6 +517,7 @@ p.image-upload-text {
 .modal-buttons{
 	display: flex;
 	justify-content: center;
+	margin-top: 15px;
 }
 
 .modal-button{
@@ -738,4 +739,35 @@ p {
 	color: #101010;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+.rating-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.rating-button-row{
+	margin-top: 5px;
+}
+
+.rating-button{
+	background-color: #f0f0f0;
+	margin: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+
+}
+
+.rating-button:hover{
+	background-color: #c8c8c8;
+	margin: 5px;
+}
+
+.rating-button.selected{
+	background-color: #272727;
+	margin: 5px;
 }
