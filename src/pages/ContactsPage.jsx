@@ -20,7 +20,7 @@ const ContactsPage = () => {
 			<div>
      	 		<section className='section-contacts'>
 					{' '}
-					<h3>Daniela Dias</h3>
+					<p><strong>Daniela Dias</strong></p>
 					<div id="contact-picture">
 					<img className="teacher-studio-picture" src={dani} alt="daniela" />
 					</div>
@@ -34,7 +34,7 @@ const ContactsPage = () => {
 					</a>
 				</section>
 				<section className='section-contacts'>
-					<h3>Renan Castro</h3>
+					<p><strong>Renan Castro</strong></p>
 					<div id="contact-picture">
 					<img className="teacher-studio-picture" src={renan} alt="renan" />
 					</div>
@@ -47,8 +47,7 @@ const ContactsPage = () => {
 				</section >
 				<section className='section-contacts'>
 					{' '}
-					<br/>
-					<h3>Jonathan Hingorani</h3>
+					<p><strong>Jonathan Hingorani</strong></p>
 					<div id="contact-picture">
 					<img className="teacher-studio-picture" src={jonny} alt="jonny" />
 					</div>
