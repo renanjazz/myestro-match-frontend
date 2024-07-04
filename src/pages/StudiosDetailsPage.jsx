@@ -107,7 +107,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
         <br/>
         <p className="teacher-studio-details-text"><strong>Price per session:</strong> {studioDetails.rental_price}</p>
         <br/>
-        <p className="teacher-studio-details-text"><strong>Available dates:</strong></p>
+        <p className="teacher-studio-details-text"><strong>Available dates (weekly):</strong></p>
         <br/>
         <div className="available-dates">
           {slots.length > 0 ? (

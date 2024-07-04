@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingTeachersCard from './RatingTeachersCard';
 
-const CompletedClassCard = ({ schedule, formatTime }) => {
+const CompletedClassCard = ({ schedule, formatTime, handleRatingUpdate }) => {
 	const { teacher } = schedule;
 	return (
 		<div>
@@ -19,11 +19,12 @@ const CompletedClassCard = ({ schedule, formatTime }) => {
 					<br />
 					<RatingTeachersCard
 						teacher={teacher}
-						
+						handleRatingUpdate={handleRatingUpdate}
 					/>
 				</div>
 			)}
 		</div>
 	);
 };
+
 export default CompletedClassCard;

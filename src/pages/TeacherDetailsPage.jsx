@@ -117,7 +117,7 @@ const TeacherDetailsPage = ({formatTime}) => {
           <strong>Attendance type:</strong> {teacherDetails.attendance_type}
         </p>
 		<br/>
-        <h3>Available dates: (weekly)</h3>
+        <h3>Available dates (weekly):</h3>
         <div className="available-dates">
           {availability.length > 0 ? (
             availability
