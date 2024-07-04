@@ -86,6 +86,14 @@ const StudiosDetailsPage = ({ formatTime }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+
+  function calculatePercentage(positive, negative){
+    const total = positive + negative
+    return total === 0 ? 0 : Math.round((positive/total)*100)
+  }
+
+const ratingPercentage = calculatePercentage(studioDetails.positive_scoring, studioDetails.negative_scoring)
   return (
     <>
       <div className="teacher-studio-details">
@@ -99,7 +107,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
         <br/>
         <p className="teacher-studio-details-text"><strong>Description:</strong> {studioDetails.description}</p>
         <br/>
-        <p className="teacher-studio-details-text"><strong>Rating:</strong> {studioDetails.rating}</p>
+        <p className="teacher-studio-details-text"><strong>Rating:</strong> {ratingPercentage}/100</p>
         <br/>
         <p className="teacher-studio-details-text"><strong>Email:</strong> {studioDetails.contact_email} </p>
         <br/>
