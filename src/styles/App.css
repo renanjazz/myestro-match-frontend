@@ -596,10 +596,30 @@ input::file-selector-button {
 }
 
 .li-github-link{
-	font-style: italic;
+	font-style: italic;	
 }
 
 .li-github-link:hover{
 	font-style: italic;
 	text-decoration: underline;
+}
+
+
+#contact-picture img {
+	height: 100px;
+	width: 100px;
+	margin: 5px;
+}
+
+.section-contacts {
+    display: flex;
+    background-color:rgb(255, 255, 255, 0.25);
+    margin-bottom: 15px;
+    border: 2px solid;
+    border-color: #101010;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 5px;
+	flex-wrap: wrap;
+	line-height: 0px;
 }
