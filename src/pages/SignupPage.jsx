@@ -11,7 +11,7 @@ const SignUpPage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [phoneNumber, setPhoneNumber] = useState('');
-	const [experienceLevel, setExperienceLevel] = useState("Beginner");
+	const [experienceLevel, setExperienceLevel] = useState("");
 	const [instrument, setInstrument] = useState('');
 	const [userImage, setUserImage] = useState(null);
 	const [error, setError] = useState(null);
@@ -21,7 +21,12 @@ const SignUpPage = () => {
 
 	async function handleSignUp(e) {
 		e.preventDefault();
-		setError(null);
+    setError(null);
+
+    if (!experienceLevel) {
+      setError("Please select an experience level.");
+      return;
+    }
 
 		const formData = new FormData();
 		formData.append('fullname', fullname);
@@ -104,7 +109,7 @@ const SignUpPage = () => {
 						value={experienceLevel}
 						onChange={(event) => setExperienceLevel(event.target.value)}
 					>
-						<option value="Beginner">-Experience level-</option>
+						<option value="">-Experience level-</option>
 						<option value="Beginner">Beginner</option>
 						<option value="Intermediate">Intermediate</option>
 						<option value="Advanced">Advanced</option>

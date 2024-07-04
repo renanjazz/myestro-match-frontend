@@ -97,7 +97,6 @@ const EditUserPage = ({ profileUser, setProfileUser }) => {
             value={experienceLevel}
             onChange={(event) => setExperienceLevel(event.target.value)}
           >
-            <option value="">-Experience level-</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
