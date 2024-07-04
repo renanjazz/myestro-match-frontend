@@ -1,17 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ContactsPage = () => {
+
+	const nav = useNavigate();
+
+	function handleBackButton() {
+		nav('/');
+	}
+	
 	return (
 		<div className='contact-page-margin'>
 			
 			<h2>How to contact us</h2>
-			<h3>Repositories</h3>
-			<a href="https://github.com/renanjazz/myestro-match-frontend">
-				<p className='li-github-link'>Myestro Front-end</p>
-			</a>
-			<a href="https://github.com/Dani-A-Dias/myestro-match-backend">
-				<p className='li-github-link'>Myestro Back-end</p>
-			</a>
+	
 			<div>
      	 		<section>
 					{' '}
@@ -24,6 +26,7 @@ const ContactsPage = () => {
 					</a>
 				</section>
 				<section>
+					<br/>
 					<h3>Renan Castro</h3>
 					<a href="">
 						<p className='li-github-link'>Linkedin</p>
@@ -34,6 +37,7 @@ const ContactsPage = () => {
 				</section>
 				<section>
 					{' '}
+					<br/>
 					<h3>Jonathan Hingorani</h3>
 					<a href="">
 						<p className='li-github-link'>Linkedin</p>
@@ -42,9 +46,24 @@ const ContactsPage = () => {
 						<p className='li-github-link'>Github</p>
 					</a>
 				</section>
-
+				<br/>
+				<h3>Our project repositories</h3>
+				<a href="https://github.com/renanjazz/myestro-match-frontend">
+				<p className='li-github-link'>Myestro Front-end</p>
+				</a>
+				<a href="https://github.com/Dani-A-Dias/myestro-match-backend">
+				<p className='li-github-link'>Myestro Back-end</p>
+			</a>
 			</div>
+			<br/>
+			<br/>
+			<div className="book-back-box">
+			<button className="book-back-button" onClick={handleBackButton}>Back</button>
+			</div>
+			<br />
+			<br />
 		</div>
+		
 	);
 };
 

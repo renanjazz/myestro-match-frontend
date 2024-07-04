@@ -33,6 +33,7 @@ const UserProfilePage = ({profileUser}) => {
       <br />
       <p><strong>Phone:</strong> {profileUser?.phone_number}</p>
       <br />
+      <br />
       <div className="book-back-box">
       <button className="book-back-button" onClick={editProfile}>Edit Profile</button>
       </div>

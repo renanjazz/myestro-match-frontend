@@ -150,6 +150,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
           </div>
         )}
         <br />
+        <br />
         <div className="book-back-box">
         <button className="book-back-button" onClick={openModal}>Book session</button>
         <br />

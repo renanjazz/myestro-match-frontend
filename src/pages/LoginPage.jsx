@@ -57,6 +57,7 @@ const LoginPage = () => {
       </form>
       {error && <p className='error-message' >{error}</p>}
       <br />
+      <br />
       <h3 className='signup-login-cta'>Not a member yet? <a href="/signup">Sign up now!</a></h3>
     </div>
   );

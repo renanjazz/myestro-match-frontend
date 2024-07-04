@@ -70,12 +70,12 @@ const AboutPage = () => {
 				</p>
 			</section>
 			<br />
+			<br/>
 			<div className="book-back-box">
 			<button className="book-back-button" onClick={handleBackButton}>Back</button>
 			</div>
 			<br />
-
-
+			<br/>
 		</div>
 	);
 };

@@ -147,8 +147,9 @@ body {
 }
 
 .user-icon {
-	height: 23px;
-	padding-left: 10px;
+	height: 33px;
+	width: 33px;
+	margin-left: 10px;
 	border-radius: 50%;
 }
 
@@ -159,12 +160,15 @@ body {
 
 .close-icon {
 	width: 20px;
-	padding-right: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .hamburger-icon {
 	width: 20px;
-	padding-right: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+
 }
 
 button {
@@ -187,12 +191,14 @@ button {
 	font-weight: lighter;
 	font-size: 0.9rem;
 	width: 90vw;
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 .landingpage-logo {
 	width: 180px;
 	max-width: 2000px;
-	margin-top: 45px;
+	margin-top: 120px;
 	margin-bottom: 20px;
 }
 
@@ -208,6 +214,7 @@ button {
 	cursor: pointer;
 	padding: 10px;
 	margin: 5px;
+	width: 250px;
 }
 
 .landing-page-button:hover {
@@ -220,6 +227,8 @@ button {
 	border-color: #101010;
 	border-radius: 10px;
 	cursor: pointer;
+	width: 250px;
+
 }
 
 .landing-page-button.selected {
@@ -232,6 +241,8 @@ button {
     border-color: #101010;
     border-radius: 10px;
     cursor: pointer;
+	width: 250px;
+
 }
 
 h2 {
