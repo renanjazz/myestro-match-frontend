@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { API_URL } from '../config';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingComplete }) => {
 	const nav = useNavigate()
@@ -35,7 +36,7 @@ const BookingCard = ({ formatTime, booking, handleBookingDelete, handleBookingCo
 			{booking && booking.studio && (
 				<div className="teacher-studio-card">
 					<p>
-						<strong>{booking.studio.studio_name}</strong>, at{' '}
+						<NavLink to={`/studios/${booking.studio._id}`} className={"teacher-studio-name-link"}><strong>{booking.studio.studio_name}</strong></NavLink>, at{' '}
 						{booking.studio.address}, every {booking.day_of_week} at{' '}
 						{formatTime(booking.start_time)}
 					</p>

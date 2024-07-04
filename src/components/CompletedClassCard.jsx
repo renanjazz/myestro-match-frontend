@@ -1,5 +1,6 @@
 import React from 'react';
 import RatingTeachersCard from './RatingTeachersCard';
+import { NavLink } from 'react-router-dom';
 
 const CompletedClassCard = ({ schedule, formatTime }) => {
 	const { teacher } = schedule;
@@ -8,7 +9,7 @@ const CompletedClassCard = ({ schedule, formatTime }) => {
 			{schedule && teacher && (
 				<div className="teacher-studio-card">
 					<p>
-						<strong>{teacher.fullname}</strong>, {teacher.instrument}, every{' '}
+						<NavLink to={`/teacher/${teacher._id}`} className={"teacher-studio-name-link"}><strong>{teacher.fullname}</strong></NavLink>, {teacher.instrument}, every{' '}
 						{schedule.day_of_week} at {formatTime(schedule.start_time)}
 					</p>
 					{Array.isArray(teacher.attendance_type) &&

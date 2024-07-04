@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { API_URL } from '../config';
 import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const ScheduleCard = ({
 	schedule,
@@ -43,7 +44,7 @@ const ScheduleCard = ({
 			{schedule && schedule.teacher && (
 				<div className="teacher-studio-card">
 					<p>
-						<strong>{schedule.teacher.fullname}</strong>,{' '}
+						<NavLink to={`/teacher/${schedule.teacher._id}`} className={"teacher-studio-name-link"}><strong>{schedule.teacher.fullname}</strong></NavLink>,{' '}
 						{schedule.teacher.instrument}, every {schedule.day_of_week} at{' '}
 						{formatTime(schedule.start_time)}
 					</p>
