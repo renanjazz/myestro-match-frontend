@@ -115,7 +115,7 @@ const SchedulePage = ({ formatTime }) => {
 	return (
 		<>
 			<div className="general-page-margin">
-				<h2>My Schedule</h2>
+				<h2>My schedule</h2>
 
 				<h3 className="ongoing-subheader">
 					Ongoing: {scheduledClasses.length + scheduledBooking.length} fixture(s)

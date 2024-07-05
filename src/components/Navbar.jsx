@@ -19,7 +19,7 @@ const Navbar = ({profileUser}) => {
     }
   }
 
-  //handlelogout
+  
 
   return (
     <nav className="navbar">

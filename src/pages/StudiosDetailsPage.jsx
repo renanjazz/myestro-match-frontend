@@ -164,7 +164,7 @@ const ratingPercentage = calculatePercentage(studioDetails.positive_scoring, stu
         <br />
         <Link to={"/studios"}>
         <button className="book-back-button">
-          Back
+          Back to studios
         </button>
         </Link>
         </div>

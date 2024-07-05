@@ -200,7 +200,7 @@ const TeacherDetailsPage = ({ formatTime }) => {
 					</button>
 					<br />
 					<Link to={'/teacher'}>
-						<button className="book-back-button">Back</button>
+						<button className="book-back-button">Back to teachers</button>
 					</Link>
 				</div>
 				<br />
