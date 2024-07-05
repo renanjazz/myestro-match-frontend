@@ -16,7 +16,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const nav = useNavigate();
 
-  console.log(studioId);
+ //console.log(studioId);
 
   useEffect(() => {
     setError(null);
@@ -28,9 +28,9 @@ const StudiosDetailsPage = ({ formatTime }) => {
         console.log("This is the studio data", data);
         setStudioDetails(data.foundStudio);
         setSlots(data.foundStudio.slot);
-        console.log(data);
-        console.log(data.foundStudio);
-        console.log("This is after setting the useState", studioDetails);
+        //console.log(data);
+       // console.log(data.foundStudio);
+       // console.log("This is after setting the useState", studioDetails);
       } catch (error) {
         console.log("Error fetching the studio", error);
       }
@@ -52,7 +52,7 @@ const StudiosDetailsPage = ({ formatTime }) => {
         day_of_week,
         slot: _id,
       });
-      console.log(slots);
+      //console.log(slots);
       setSlots((prevSlots) =>
         prevSlots.map((slot) =>
           slot._id === _id ? { ...slot, reserved: true } : slot

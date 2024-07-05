@@ -7,9 +7,7 @@ const RatingStudiosCard = ({ studio, handleRatingUpdate }) => {
 	const [hasRated, setHasRated] = useState(false);
 	const { currUser } = useContext(AuthContext);
 
-    console.log("this is studio info", studio)
-
-	useEffect(() => {
+    useEffect(() => {
 		if (studio.user_already_rated.includes(currUser._id)) {
 			setHasRated(true);
 		}

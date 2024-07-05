@@ -25,10 +25,10 @@ const TeacherDetailsPage = ({ formatTime }) => {
 				const { data } = await axios.get(
 					`${API_URL}/teachers/api/teachers/${teacherId}`
 				);
-				console.log('This is the teacher data', data);
+				//console.log('This is the teacher data', data);
 				setTeacherDetails(data);
 				setAvailability(data.availability);
-				console.log(teacherDetails);
+				//console.log(teacherDetails);
 			} catch (error) {
 				console.log('Error fetching the teacher', error);
 			}

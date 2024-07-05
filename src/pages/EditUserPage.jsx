@@ -41,7 +41,7 @@ const EditUserPage = ({ profileUser, setProfileUser }) => {
         `${API_URL}/users/api/users/${currUser._id}`,
         formData
       );
-      console.log('User updated:', data);
+      //console.log('User updated:', data);
       setProfileUser(data)
       nav('/profile');
     } catch (error) {

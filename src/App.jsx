@@ -47,7 +47,7 @@ function App() {
 		}
 	}, [currUser]);
 
-	console.log('this is user', currUser);
+	//console.log('this is user', currUser);
 
 	const formatTime = (time) => {
 		const timeStr = time.toString();

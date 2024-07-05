@@ -18,13 +18,13 @@ const EditBookingReqPage = ({formatTime}) => {
       try {
         const { data } = await axios.get(`${API_URL}/bookings/api/studio-booking/${id}`);
         setBooking(data); 
-        console.log(data)       
+        //console.log(data)       
         const studioId = data.studio._id;
         const studioData = await axios.get(`${API_URL}/studios/api/studios/${studioId}`);
         setStudioDetails(studioData.data);
-        console.log("this is studio data", studioData)
+       // console.log("this is studio data", studioData)
         setSlots(studioData.data.foundStudio.slot);
-        console.log("this is slot", studioData.data.foundStudio.slot)
+      //  console.log("this is slot", studioData.data.foundStudio.slot)
       } catch (error) {
         console.error('Error fetching data:', error);
       }

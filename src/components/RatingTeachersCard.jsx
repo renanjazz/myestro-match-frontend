@@ -6,7 +6,7 @@ import { API_URL } from '../../config';
 const RatingTeachersCard = ({ teacher, handleRatingUpdate }) => {
 	const [hasRated, setHasRated] = useState(false);
 	const { currUser } = useContext(AuthContext);
-	console.log("this is teacher info", teacher);
+	
 
 	useEffect(() => {
 		if (teacher.user_already_rated.includes(currUser._id)) {

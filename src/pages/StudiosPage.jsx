@@ -11,9 +11,9 @@ const StudiosPage = () => {
     const fetchStudios = async () => {
       try {
         const { data } = await axios.get(`${API_URL}/studios/api/studios`);
-        console.log("These are the studios", data);
+        //console.log("These are the studios", data);
         setStudios(data);
-        console.log(studios);
+        //console.log(studios);
       } catch (error) {
         console.log("Error fetching the studios", error);
       }

@@ -1,18 +1,14 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { AuthContext } from '../context/auth.context.jsx';
 import logoblack from "../assets/myestro-b.png";
 
 const LandingPage = () => {
-  const [teacher, setTeacher] = useState("");
-  const [studio, setStudio] = useState("");
   const { currUser } = useContext(AuthContext);
-  const navigate = useNavigate();
 if(currUser){
-  console.log(currUser)
+  //console.log(currUser)
 }else{
-  console.log("No user info")
+  //console.log("No user info")
 }
 
 

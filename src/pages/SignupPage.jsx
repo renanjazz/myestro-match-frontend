@@ -40,7 +40,7 @@ const SignUpPage = () => {
 
 		try {
 			const { data } = await axios.post(`${API_URL}/auth/signup`, formData);
-			console.log('User created:', data);
+			//console.log('User created:', data);
 			storeToken(data.token);
 			authUser();
 			nav('/');

@@ -11,9 +11,9 @@ const TeacherPage = () => {
     const fetchTeachers= async () => {
       try {
         const { data } = await axios.get(`${API_URL}/teachers/api/teachers`);
-        console.log("These are the teachers", data);
+       // console.log("These are the teachers", data);
         setTeachers(data);
-        console.log (teachers);
+       // console.log (teachers);
       } catch (error) {
         console.log("Error fetching the teachers", error);
       }

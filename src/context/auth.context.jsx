@@ -29,14 +29,14 @@ const AuthContextWrapper = ({ children }) => {
       const { data } = await axios.get(`${API_URL}/auth/verify`, {
         headers: { Authorization: `Bearer ${tokenFromLocSt}` },
       });
-      console.log("response from verify: is working!", data);
+      //console.log("response from verify: is working!", data);
       setCurrUser(data.user);
       setTimeout(() => {
         setLoadActive(false);
         setUserLogged(true);
       }, 2000);
     } catch (error) {
-      console.error("Error verifying token:", error);
+     // console.error("Error verifying token:", error);
       setCurrUser(null);
       setLoadActive(false);
       setUserLogged(false);
@@ -52,7 +52,7 @@ const AuthContextWrapper = ({ children }) => {
     localStorage.removeItem("authToken");
     setCurrUser(null);
     nav("/");
-    console.log("User logged out successfully");
+   // console.log("User logged out successfully");
   };
 
   return (

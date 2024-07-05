@@ -23,7 +23,7 @@ const SchedulePage = ({ formatTime }) => {
 				const { data } = await axios.get(`${API_URL}/schedule/api/class-schedule`, {
 					params: { userId: currUser._id },
 				});
-				console.log('This is the schedule', data);
+				//console.log('This is the schedule', data);
 
 				const scheduled = data.filter((item) => item.status === 'Scheduled');
 				const completed = data.filter((item) => item.status === 'Archived');
@@ -46,7 +46,7 @@ const SchedulePage = ({ formatTime }) => {
 				const { data } = await axios.get(`${API_URL}/bookings/api/studio-booking`, {
 					params: { userId: currUser._id },
 				});
-				console.log('This is the booking', data);
+				//console.log('This is the booking', data);
 
 				const booked = data.filter((item) => item.status === 'Booked');
 				const completed = data.filter((item) => item.status === 'Archived');
@@ -92,7 +92,7 @@ const SchedulePage = ({ formatTime }) => {
 
 	// Function to update the list after rating
 	const handleRatingUpdate = (updatedEntity, entityType) => {
-		console.log('handleRatingUpdate', updatedEntity, entityType);
+		//console.log('handleRatingUpdate', updatedEntity, entityType);
 		if (entityType === 'teacher') {
 			setCompletedClasses((prevCompletedClasses) =>
 				prevCompletedClasses.map((classItem) =>
